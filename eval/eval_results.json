@@ -1,0 +1,595 @@
+[
+  {
+    "id": "F01",
+    "category": "factual",
+    "question": "¿Qué es el descenso del gradiente y cómo se usa en el entrenamiento de redes neuronales?",
+    "answer": "¡Excelente pregunta! Aquí te explico de forma completa el **Descenso del Gradiente** y su rol en el entrenamiento de redes neuronales, con base en los apuntes del curso:\n\n---\n\n## 📉 ¿Qué es el Descenso del Gradiente?\n\nEl **Descenso del Gradiente** (*Gradient Descent*) es un **algoritmo de optimización** cuyo objetivo es **minimizar el error** (o función de pérdida/costo) de una red neuronal. Lo hace ajustando iterativamente los **pesos** de la red en la dirección que reduce dicho error.\n\nLa idea central es calcular la **derivada de la función de costo con respecto a los pesos** de cada neurona, lo que indica cuánto contribuye cada peso al error total. Con esa información, los pesos se actualizan para reducir progresivamente el error.\n\n---\n\n## 🧠 ¿Cómo se usa en el Entrenamiento de Redes Neuronales?\n\nEl proceso de entrenamiento combina el descenso del gradiente con **Backpropagation** (propagación hacia atrás), y funciona en los siguientes pasos:\n\n### 1. 🔁 Forward Pass (Propagación hacia adelante)\n- La red recibe los datos de entrada.\n- Cada neurona procesa la información usando sus **pesos (Weights)**, que determinan cuánto influye cada entrada en el resultado.\n- Se produce una predicción de salida.\n\n### 2. 📏 Cálculo del Error\n- Se compara la predicción con el valor real usando una **función de costo/pérdida**.\n- Esto cuantifica qué tan lejos está la red de la respuesta correcta.\n\n### 3. ⬅️ Backpropagation (Propagación hacia atrás)\n- Se calcula la **derivada de la función de costo con respecto a los pesos** de cada neurona.\n- Esto permite saber el **nivel de contribución de cada peso al error general**, es decir, qué tanto \"culpa\" tiene cada peso en el error.\n\n### 4. ✏️ Actualización de Pesos (Descenso del Gradiente)\n- Se ajustan los pesos en la dirección opuesta al gradiente (por eso se llama *descenso*).\n- Este proceso se repite múltiples veces (épocas) hasta que el error converge a un mínimo.\n\n---\n\n## 🔑 Conceptos Clave\n\n| Concepto | Descripción |\n|---|---|\n| **Gradiente** | Derivada de la función de costo respecto a los pesos |\n| **Pesos (Weights)** | Valores que determinan la influencia de cada entrada en la red |\n| **Función de costo** | Mide el error entre la predicción y el valor real |\n| **Backpropagation** | Algoritmo que propaga el error hacia atrás para calcular los gradientes |\n| **Tasa de aprendizaje** | Controla qué tan grandes son los pasos en cada actualización de pesos |\n\n---\n\n## 📚 Fuentes\n- `10_SEMANA_AI_20260428_2.pdf`\n- `10_SEMANA_AI_20260428_1.pdf`\n- `13_SEMANA_AI_20260521_3.pdf`\n- `9_SEMANA_AI_20260423_1.pdf`\n- `9_SEMANA_AI_20260421_2.pdf`\n\n¿Te gustaría profundizar en algún aspecto específico, como los tipos de descenso del gradiente (batch, mini-batch, estocástico) o cómo funciona la backpropagation matemáticamente? 🚀",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "descenso del gradiente redes neuronales",
+          "justification": "El usuario pregunta sobre descenso del gradiente y su uso en redes neuronales, tema que debería estar cubierto en los apuntes del curso de IA del TEC."
+        }
+      },
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "entrenamiento redes neuronales optimización pesos",
+          "justification": "Buscar información complementaria sobre el proceso de entrenamiento de redes neuronales y optimización de parámetros para enriquecer la respuesta."
+        }
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "category": "factual",
+    "question": "¿Cuál es la diferencia entre aprendizaje supervisado y no supervisado?",
+    "answer": "¡Excelente pregunta! Aquí te explico la diferencia entre ambos tipos de aprendizaje, según los apuntes del curso:\n\n---\n\n## 🎓 Aprendizaje Supervisado\n\n- **Característica principal:** Se cuenta con **etiquetas o salidas esperadas (y)** para los datos de entrenamiento.\n- **Proceso:** El modelo aprende comparando sus predicciones **(ŷ)** con los valores reales **(y)** y ajusta sus parámetros para minimizar el error.\n- **Usos típicos:**\n  - Clasificación binaria (ej. ¿es spam o no?)\n  - Regresión (ej. predecir el precio de una casa)\n\n---\n\n## 🔍 Aprendizaje No Supervisado\n\n- **Característica principal:** **No existen etiquetas** ni salidas esperadas. Los datos están sin clasificar.\n- **Proceso:** El modelo debe descubrir **patrones, agrupaciones o relaciones** por sí solo, sin ninguna guía externa.\n- **Usos típicos:**\n  - Agrupamiento / Clustering (ej. segmentar clientes)\n  - Reducción de dimensionalidad\n  - Detección de asociaciones\n\n---\n\n## 🔑 Diferencia Clave\n\n| Característica | Supervisado | No Supervisado |\n|---|---|---|\n| ¿Tiene etiquetas? | ✅ Sí | ❌ No |\n| ¿Qué aprende? | A predecir una salida conocida | A encontrar patrones ocultos |\n| Ejemplos | Clasificación, Regresión | Clustering, Asociación |\n\nEn resumen: el **aprendizaje supervisado** necesita que alguien le \"muestre\" las respuestas correctas durante el entrenamiento, mientras que el **aprendizaje no supervisado** descubre la estructura de los datos por su propia cuenta.\n\n---\n\n📄 **Fuentes:** `2_SEMANA_AI_20260224_2.pdf` — Semana 2 | `1_SEMANA_AI_20260219_1.pdf` y `1_SEMANA_AI_20260219_2.pdf` — Semana 1",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "diferencia entre aprendizaje supervisado y no supervisado",
+          "justification": "El usuario pregunta sobre un tema del curso de IA: la diferencia entre aprendizaje supervisado y no supervisado. Se consulta la base de apuntes del curso para dar una respuesta precisa y basada en el material visto en clase."
+        }
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "category": "factual",
+    "question": "¿Qué es una red neuronal convolucional y para qué se usa?",
+    "answer": "¡Excelente pregunta! Aquí te explico qué es una **Red Neuronal Convolucional (CNN)** según los apuntes del curso:\n\n---\n\n## 🧠 ¿Qué es una CNN?\n\nUna **Red Neuronal Convolucional (CNN, por sus siglas en inglés: Convolutional Neural Network)** es un tipo especial de arquitectura de red neuronal diseñada principalmente para procesar datos con estructura espacial, como **imágenes**.\n\nA diferencia de una red neuronal tradicional (*fully-connected*), una CNN utiliza un pequeño **kernel (filtro)** que se desliza a través de la imagen para **extraer características** como bordes, sombras y colores. Conforme se avanza en las capas de la red, se obtienen detalles cada vez más complejos y abstractos.\n\n---\n\n## 🏗️ Componentes principales\n\n| Componente | Función |\n|---|---|\n| **Capas de convolución multicanal** | Extracción de características (bordes, texturas, patrones) |\n| **Operación de Pooling** | Reducción de dimensionalidad, conservando la información más relevante |\n| **Capa Fully Connected** | Clasificador final que toma las características extraídas y produce una predicción |\n\n---\n\n## 🎯 ¿Para qué se usan?\n\nLas CNNs son ampliamente utilizadas en tareas como:\n- 📸 **Clasificación de imágenes** (ej. identificar si una foto es un gato o un perro)\n- 🔍 **Detección de objetos** (ej. encontrar objetos dentro de una imagen)\n- 🏥 **Diagnóstico médico** (análisis de radiografías o resonancias)\n- 🚗 **Vehículos autónomos** (reconocimiento de señales y obstáculos)\n- 😊 **Reconocimiento facial**\n\n---\n\n📚 **Fuentes:** `10_SEMANA_AI_20260428_2.pdf`, `10_SEMANA_AI_20260428_3.pdf`, `10_SEMANA_AI_20260428_1.pdf`, `9_SEMANA_AI_20260421_2.pdf`, `13_SEMANA_AI_20260521_3.pdf`\n\n¿Te gustaría profundizar en alguno de los componentes, como el **pooling** o las **capas de convolución**? 😊",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "red neuronal convolucional",
+          "justification": "El usuario pregunta sobre redes neuronales convolucionales, tema que debería estar cubierto en los apuntes del curso de IA del TEC."
+        }
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "category": "factual",
+    "question": "Explica qué es el overfitting y cómo se puede prevenir.",
+    "answer": "¡Aquí tienes una explicación completa sobre el **overfitting** basada en los apuntes del curso! 🎓\n\n---\n\n## 🔍 ¿Qué es el Overfitting?\n\nEl **overfitting** (o sobreajuste) ocurre cuando un modelo de Machine Learning **se adapta demasiado a los datos de entrenamiento**, perdiendo la capacidad de generalizar a datos nuevos o no vistos. Se caracteriza por:\n\n- 📉 **Alta varianza** entre los resultados de *training* y *validation*.\n- El modelo \"memoriza\" los datos de entrenamiento en lugar de aprender patrones generales.\n- Es especialmente frecuente cuando hay **muchas variables (alta dimensionalidad)** pero **pocos ejemplos** de entrenamiento.\n\n> En términos simples: el modelo funciona muy bien con los datos con los que fue entrenado, pero falla al enfrentarse a datos nuevos.\n\n---\n\n## 🛡️ ¿Cómo prevenirlo?\n\nExisten varias estrategias para combatir el overfitting:\n\n| Estrategia | Descripción |\n|---|---|\n| 🧩 **Usar un modelo más simple** | Reducir la complejidad del modelo para evitar que se ajuste demasiado al ruido de los datos. |\n| 📐 **Reducir dimensionalidad** | Disminuir el número de características o variables del conjunto de datos. |\n| 📦 **Obtener más datos de entrenamiento** | Aumentar la cantidad de ejemplos ayuda al modelo a aprender patrones más generales. |\n| ⚖️ **Aplicar regularización** | Técnicas como L1 (Lasso) o L2 (Ridge) penalizan la complejidad excesiva del modelo. |\n\n---\n\n## 📌 Resumen Visual\n\n```\nDatos de entrenamiento → Modelo muy complejo → Memoriza ruido → Falla en datos nuevos\n                                                      ↑\n                                                 OVERFITTING\n```\n\n---\n\n📚 **Fuentes:**\n- `5_SEMANA_AI_20260317_1.pdf`\n- `5_Semana_AI_20260319_2.pdf`\n- `6_SEMANA_AI_20260324_1.pdf`\n- `7_SEMANA_AI_20260407_1.pdf`\n\n¿Te gustaría profundizar en alguna de las técnicas de prevención, como la **regularización** o la **reducción de dimensionalidad**? 😊",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "overfitting qué es y cómo prevenirlo",
+          "justification": "El usuario pregunta sobre overfitting y sus métodos de prevención, tema que debe estar cubierto en los apuntes del curso de IA."
+        }
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "category": "factual",
+    "question": "¿Qué es la función de activación ReLU y cuáles son sus ventajas?",
+    "answer": "Los apuntes disponibles del curso (correspondientes a la **Semana 14**) no contienen información sobre la función de activación ReLU, ya que esa semana se enfoca en temas como memoria en agentes, ventana de contexto y modelos de razonamiento.\n\nSin embargo, puedo responderte con base en mi conocimiento general sobre el tema:\n\n---\n\n## 🔵 ¿Qué es la función de activación ReLU?\n\n**ReLU** (*Rectified Linear Unit*) es una de las funciones de activación más utilizadas en redes neuronales. Su fórmula es muy simple:\n\n> **f(x) = max(0, x)**\n\nEs decir:\n- Si la entrada **x > 0**, la salida es **x** (lineal).\n- Si la entrada **x ≤ 0**, la salida es **0** (se \"apaga\" la neurona).\n\n---\n\n## ✅ Ventajas de ReLU\n\n| Ventaja | Descripción |\n|---|---|\n| **Simplicidad computacional** | Al ser solo un `max(0, x)`, es muy rápida de calcular. |\n| **Evita el problema del gradiente desvaneciente** | A diferencia de sigmoid o tanh, los gradientes no se saturan para valores positivos, lo que facilita el entrenamiento de redes profundas. |\n| **Promueve la dispersión (*sparsity*)** | Al anular neuronas con valores negativos, produce representaciones más eficientes. |\n| **Convergencia más rápida** | En la práctica, las redes con ReLU convergen más rápido durante el entrenamiento. |\n| **Fácil de derivar** | Su derivada es 1 para x > 0 y 0 para x < 0, lo que simplifica el backpropagation. |\n\n---\n\n## ⚠️ Limitaciones conocidas\n\n- **\"Dying ReLU\"**: Si muchas neuronas reciben siempre valores negativos, se \"apagan\" permanentemente y dejan de aprender.\n- **No centrada en cero**: A diferencia de tanh, su salida no es simétrica alrededor del cero.\n\n---\n\n> 📌 **Nota:** Esta respuesta se basa en conocimiento general, ya que el tema específico de ReLU **no se encuentra en los apuntes disponibles del curso** (Semana 14). Te recomiendo revisar los apuntes de semanas anteriores donde se cubran redes neuronales.\n>\n> 📚 **Fuentes consultadas:** `14_SEMANA_AI_20260526_2.pdf`, `14_SEMANA_AI_20260526_1.pdf`, `14_SEMANA_AI_20260528_1.pdf`, `14_SEMANA_AI_20260528_2.pdf`",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "función de activación ReLU ventajas",
+          "justification": "El usuario pregunta sobre la función de activación ReLU y sus ventajas, tema que debería estar cubierto en los apuntes del curso de IA."
+        }
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "category": "factual",
+    "question": "¿En qué consiste el algoritmo de retropropagación?",
+    "answer": "## Algoritmo de Retropropagación (Backpropagation)\n\nEl **algoritmo de retropropagación** es uno de los pilares fundamentales del aprendizaje en redes neuronales. Aquí te explico en qué consiste:\n\n---\n\n### 🧠 ¿Qué es?\nEs el algoritmo utilizado para **entrenar redes neuronales de múltiples capas**, calculando de manera eficiente cómo cada peso y sesgo (*bias*) de la red contribuye al error total del modelo.\n\n---\n\n### 📜 Contexto Histórico\n- El **perceptrón simple** (básicamente una regresión logística) solo podía resolver **problemas lineales**, siendo incapaz de manejar operaciones lógicas como el **XOR**.\n- Esto provocó el llamado **\"invierno de la IA\"** en los años 70, un período de escaso progreso en el campo.\n- Fue la combinación de **redes neuronales profundas + backpropagation** lo que superó estas limitaciones y relanzó la investigación en IA.\n\n---\n\n### ⚙️ ¿Cómo funciona?\nEl algoritmo opera en dos fases principales:\n\n1. **Propagación hacia adelante (*Forward Pass*):** La entrada recorre la red capa por capa hasta producir una predicción.\n2. **Propagación hacia atrás (*Backward Pass*):** Se calcula el **error** entre la predicción y el valor real, y ese error se propaga **hacia atrás** a través de la red usando la **regla de la cadena** del cálculo diferencial para determinar cuánto contribuyó cada peso al error.\n\nLuego, los pesos se **actualizan** para reducir el error, típicamente mediante un optimizador como el **descenso de gradiente**.\n\n---\n\n### 🚀 Aplicaciones\n- Entrenamiento de redes neuronales de múltiples capas.\n- Optimización de modelos generativos como los **VAE (Variational Autoencoders)**, donde permite hacer retropropagación a través de muestras estocásticas.\n\n---\n\n### 📚 Fuentes\n- `1_SEMANA_AI_20260219_1.pdf` — Semana 1\n- `10_SEMANA_AI_20260428_2.pdf` — Semana 10\n- `13_SEMANA_AI_2018191805_1.pdf` — Semana 0\n\n¿Te gustaría profundizar en algún aspecto específico, como la regla de la cadena, el descenso de gradiente o su aplicación en algún modelo en particular? 😊",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "algoritmo de retropropagación backpropagation",
+          "justification": "El usuario pregunta sobre el algoritmo de retropropagación, que es un tema del curso de IA. Se debe buscar en los apuntes del curso."
+        }
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "category": "factual",
+    "question": "¿Qué es el aprendizaje por refuerzo? Da un ejemplo.",
+    "answer": "## 🤖 Aprendizaje por Refuerzo\n\nEl **aprendizaje por refuerzo** es un paradigma de aprendizaje automático distinto al aprendizaje supervisado y no supervisado. Sus características principales son:\n\n- El modelo (llamado **agente**) aprende a través de la **interacción con un entorno**.\n- Recibe **recompensas** cuando toma decisiones correctas o acertadas.\n- Recibe **penalizaciones** cuando comete errores o falla.\n- A lo largo del tiempo, el agente aprende a **maximizar sus recompensas** y minimizar sus penalizaciones.\n\n---\n\n### 🎮 Ejemplo: IA jugando Mario Bros\n\nUn ejemplo clásico mencionado en los apuntes del curso es **una IA que aprende a jugar Mario**:\n\n| Acción | Resultado |\n|---|---|\n| Avanzar en el nivel | ✅ **Recompensa** |\n| Caer en un hueco | ❌ **Penalización** |\n\nLa IA no recibe instrucciones explícitas de cómo jugar; simplemente prueba distintas acciones y, con el tiempo, aprende qué comportamientos le generan más recompensas. Así, de forma iterativa, desarrolla una **estrategia óptima** para completar el juego.\n\n---\n\n📚 **Fuentes:**\n- `2_SEMANA_AI_20260224_1.pdf`\n- `2_SEMANA_AI_20260224_2.pdf`\n- `3_SEMANA_AI_20260303_2.pdf`",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "aprendizaje por refuerzo",
+          "justification": "El usuario pregunta sobre el concepto de aprendizaje por refuerzo, que es un tema del curso de IA del TEC. Se busca en los apuntes del curso para dar una respuesta precisa y fundamentada."
+        }
+      }
+    ]
+  },
+  {
+    "id": "F08",
+    "category": "factual",
+    "question": "¿Qué diferencia hay entre una red LSTM y una red recurrente simple?",
+    "answer": "Los apuntes del curso mencionan ambas arquitecturas pero no profundizan en sus diferencias. Sin embargo, puedo explicarte las diferencias fundamentales con base en el conocimiento del área. Aquí va una explicación completa:\n\n---\n\n## 🧠 RNN Simple vs. LSTM\n\n### 🔁 Red Recurrente Simple (RNN)\nUna RNN procesa secuencias paso a paso, manteniendo un **estado oculto** que se actualiza en cada momento del tiempo:\n\n- En cada paso, recibe la entrada actual + el estado oculto anterior.\n- Usa una función de activación como **tanh** para calcular el nuevo estado.\n- **Problema principal:** sufre del fenómeno de **gradientes que se desvanecen o explotan** (*vanishing/exploding gradients*), lo que le dificulta aprender dependencias a **largo plazo** en secuencias largas.\n\n---\n\n### 🔐 LSTM (Long Short-Term Memory)\nLas LSTM fueron diseñadas precisamente para **resolver el problema de las dependencias a largo plazo**. Su arquitectura es más compleja e incluye:\n\n| Componente | Función |\n|---|---|\n| **Celda de memoria (cell state)** | Transporta información a lo largo del tiempo sin degradarse fácilmente |\n| **Puerta de olvido (forget gate)** | Decide qué información del pasado descartar |\n| **Puerta de entrada (input gate)** | Decide qué nueva información almacenar |\n| **Puerta de salida (output gate)** | Decide qué parte del estado de celda usar como salida |\n\n---\n\n### ⚖️ Comparación directa\n\n| Característica | RNN Simple | LSTM |\n|---|---|---|\n| Memoria a largo plazo | ❌ Limitada | ✅ Efectiva |\n| Complejidad | Baja | Alta |\n| Velocidad de entrenamiento | Más rápida | Más lenta |\n| Gradientes | Se desvanecen fácilmente | Más estables |\n| Uso típico | Secuencias cortas | Texto, audio, series de tiempo largas |\n\n---\n\n### 📌 Nota del curso\nSegún los apuntes *(Semana 10 — `10_SEMANA_AI_20260428_2.pdf`)*, tanto RNN como LSTM **utilizan tanh como función de activación** y fueron arquitecturas clave en los modelos de lenguaje antes de la llegada de los **Transformers**, que hoy dominan el estado del arte.\n\n---\n\n¿Te gustaría que profundizara en algún aspecto específico, como el funcionamiento de las puertas de la LSTM o cómo se comparan con los Transformers? 🚀",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "diferencia entre red LSTM y red recurrente simple RNN",
+          "justification": "El usuario pregunta sobre las diferencias entre LSTM y RNN simple, tema que debe estar cubierto en los apuntes del curso de IA."
+        }
+      }
+    ]
+  },
+  {
+    "id": "F09",
+    "category": "factual",
+    "question": "¿Qué es el método de k-vecinos más cercanos (KNN)?",
+    "answer": "## 🤖 K-Vecinos Más Cercanos (KNN)\n\n**KNN (K-Nearest Neighbors)** es un algoritmo de aprendizaje automático que utiliza el concepto de **proximidad** para realizar predicciones. Es uno de los algoritmos más simples e intuitivos del Machine Learning.\n\n---\n\n### 📋 ¿Cómo funciona?\n\nEl algoritmo sigue estos pasos:\n\n1. **Calcular la distancia** entre un nuevo punto de entrada y *todos* los puntos del conjunto de entrenamiento.\n2. **Seleccionar los *k* vecinos más cercanos** al nuevo punto.\n3. **Realizar la predicción** usando la información de esos vecinos.\n\n---\n\n### 📏 Métrica de Distancia\n\nPara encontrar los vecinos más cercanos, KNN utiliza una métrica de distancia. La más común es la **distancia L2** (también conocida como distancia Euclidiana).\n\n---\n\n### 🗳️ Clasificación\n\nEn problemas de **clasificación**, la predicción se determina por **mayoría de votos**: la etiqueta (clase) más común entre los *k* vecinos es la que se le asigna al nuevo punto.\n\n---\n\n### ⚠️ Limitaciones\n\n| Limitación | Descripción |\n|---|---|\n| Elección de *k* | Es difícil determinar el valor óptimo de *k* |\n| Escalabilidad | Es ineficiente con grandes volúmenes de datos |\n| Lazy Learning | No construye un modelo explícito durante el entrenamiento |\n| Sin aprendizaje activo | No generaliza; simplemente memoriza los datos |\n\n---\n\n### 📚 Fuentes\n- `3_Semana_AI_20260305_2.pdf`\n- `4_SEMANA_AI_20260310_1.pdf`\n- `4_SEMANA_AI_20260312_2.pdf`\n- `5_SEMANA_AI_20260319_1.pdf`\n- `2_SEMANA_AI_20260224_2.pdf`\n\n¿Te gustaría profundizar en algún aspecto específico de KNN, como la elección del valor de *k* o cómo se usa en regresión? 😊",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "k-vecinos más cercanos KNN",
+          "justification": "El usuario pregunta sobre el método KNN, que es un tema del curso de IA. Se debe buscar en los apuntes del curso."
+        }
+      }
+    ]
+  },
+  {
+    "id": "F10",
+    "category": "factual",
+    "question": "¿Qué es la regularización L1 y L2 y cuándo se aplican?",
+    "answer": "Aquí te explico lo que encontré y lo que puedo complementar con conocimiento general del área:\n\n---\n\n## 📚 Lo que dicen los apuntes del curso\n\nLos materiales del curso mencionan la **regularización como una técnica para combatir el overfitting (alta varianza)**, específicamente cuando:\n\n- El modelo tiene **bajo error en entrenamiento pero alto error en validación**.\n- El modelo aprende demasiado bien los datos de entrenamiento, incluyendo ruido y particularidades del dataset, perdiendo capacidad de **generalización**.\n\nLas técnicas sugeridas en los apuntes para atacar la alta varianza incluyen:\n> *\"Usar un modelo más simple, reducir dimensionalidad, obtener más ejemplos para el training set, y aplicar técnicas de regularización.\"*\n\nSin embargo, **los detalles técnicos específicos de L1 y L2 no están desarrollados en los apuntes disponibles**. A continuación te los explico con base en conocimiento general del área:\n\n---\n\n## 🔵 Regularización L2 — *Ridge*\n\nAñade una penalización proporcional al **cuadrado** de los pesos del modelo a la función de costo:\n\n$$J(\\theta) = \\text{Loss} + \\lambda \\sum_j \\theta_j^2$$\n\n- **Efecto:** Reduce los pesos hacia cero, pero **nunca los elimina completamente**.\n- **Cuándo usarla:** Cuando se sospecha que **todas las variables son relevantes** pero sus coeficientes son demasiado grandes. Ideal cuando hay multicolinealidad.\n\n---\n\n## 🟠 Regularización L1 — *Lasso*\n\nAñade una penalización proporcional al **valor absoluto** de los pesos:\n\n$$J(\\theta) = \\text{Loss} + \\lambda \\sum_j |\\theta_j|$$\n\n- **Efecto:** Puede llevar pesos exactamente a **cero**, haciendo **selección automática de características**.\n- **Cuándo usarla:** Cuando se sospecha que **muchas variables son irrelevantes** y se desea un modelo más esparso e interpretable.\n\n---\n\n## ⚖️ ¿Cuándo aplicar cuál?\n\n| Criterio | L1 (Lasso) | L2 (Ridge) |\n|---|---|---|\n| Variables irrelevantes | ✅ Muchas | ❌ Pocas |\n| Selección de características | ✅ Sí | ❌ No |\n| Interpretabilidad | ✅ Alta | 🔶 Media |\n| Multicolinealidad | ❌ No ideal | ✅ Ideal |\n| Modelo esparso | ✅ Sí | ❌ No |\n\n> 💡 También existe **Elastic Net**, que combina L1 y L2, útil cuando hay muchas características correlacionadas.\n\n---\n\n## 📌 Fuentes de los apuntes consultadas\n- `5_Semana_AI_20260319_2.pdf`\n- `5_SEMANA_AI_20260319_1.pdf`\n- `6_SEMANA_AI_20260324_1.pdf` y `_2.pdf`\n- `4_SEMANA_AI_20260310_1.pdf` y `_2.pdf`\n\nSi deseas, puedo buscar más detalles en internet o revisar el historial de conversaciones para ver si este tema fue discutido anteriormente. 😊",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "regularización L1 y L2",
+          "justification": "El usuario pregunta sobre regularización L1 y L2, tema que debería estar cubierto en los apuntes del curso de IA del TEC."
+        }
+      },
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "cuándo aplicar regularización L1 L2 overfitting",
+          "justification": "Buscar información complementaria sobre los casos de uso y cuándo se recomienda aplicar cada tipo de regularización."
+        }
+      }
+    ]
+  },
+  {
+    "id": "C01",
+    "category": "comparison",
+    "question": "¿Cuál es la diferencia entre SVM y regresión logística?",
+    "answer": "Aquí te presento la comparación entre ambos algoritmos, con base en los apuntes del curso y conocimiento complementario:\n\n---\n\n## 📊 Diferencia entre SVM y Regresión Logística\n\n> ⚠️ **Nota:** Los apuntes del curso IC6200 contienen información detallada sobre **regresión logística**, pero **SVM no está cubierto** en el material disponible. La información sobre SVM a continuación es complementaria.\n\n---\n\n### ✅ Regresión Logística *(cubierta en el curso)*\n\n| Característica | Detalle |\n|---|---|\n| **Tipo** | Algoritmo de clasificación |\n| **Salida** | Probabilidad entre 0 y 1: `σ(wx + b)` |\n| **Función de activación** | Sigmoide: `f(x) = 1 / (1 + e^(-(wx+b)))` |\n| **Función de costo** | Binary Cross-Entropy (BCE) |\n| **Optimización** | Descenso de gradiente |\n| **Umbral de decisión** | Por defecto en 0.5 |\n| **Variantes** | Binaria y Multinomial |\n\n> *\"La regresión logística es un algoritmo de clasificación\"* — Apuntes del curso (5_SEMANA_AI_20260319_1.pdf)\n\n---\n\n### 🔵 SVM — Support Vector Machine *(no cubierto en los apuntes)*\n\n| Característica | Detalle |\n|---|---|\n| **Tipo** | Algoritmo de clasificación (y regresión) |\n| **Salida** | Clase directamente (no probabilidad) |\n| **Principio** | Encuentra el **hiperplano de margen máximo** entre clases |\n| **Función de costo** | Hinge Loss |\n| **Optimización** | Maximización del margen entre clases |\n| **Ventaja clave** | Funciona bien en espacios de alta dimensión con **kernel trick** |\n\n---\n\n### 🆚 Comparación directa\n\n| Aspecto | Regresión Logística | SVM |\n|---|---|---|\n| **Salida** | Probabilidad (0 a 1) | Clase directa |\n| **Interpretabilidad** | Alta (da probabilidades) | Moderada |\n| **Función de pérdida** | Cross-Entropy | Hinge Loss |\n| **Datos no lineales** | Requiere ingeniería de features | Usa **kernel trick** (RBF, polinomial, etc.) |\n| **Sensibilidad a outliers** | Más sensible | Más robusta (solo depende de vectores de soporte) |\n| **Escalabilidad** | Mejor en datasets grandes | Puede ser lento en datasets muy grandes |\n| **Cuándo usar** | Cuando necesitas probabilidades o el problema es linealmente separable | Cuando el margen máximo es prioritario o los datos son complejos |\n\n---\n\n### 🧠 Resumen clave\n\n- **Regresión Logística** modela la *probabilidad* de pertenecer a una clase usando la función sigmoide.\n- **SVM** busca el *hiperplano* que maximiza el margen entre clases, sin producir probabilidades directamente.\n- Ambos son clasificadores lineales en su forma básica, pero SVM puede extenderse a problemas no lineales mediante el **kernel trick**.\n\n---\n\n📚 **Fuentes del curso:** `5_SEMANA_AI_20260319_1.pdf`, `6_SEMANA_AI_20260324_2.pdf`, `6_SEMANA_AI_20260326_1.pdf`, `7_SEMANA_AI_20260409_2.pdf`",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "SVM Support Vector Machine",
+          "justification": "Buscar información sobre SVM en los apuntes del curso para comparar con regresión logística"
+        }
+      },
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "regresión logística clasificación",
+          "justification": "Buscar información sobre regresión logística en los apuntes del curso para comparar con SVM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "C02",
+    "category": "comparison",
+    "question": "Compara las redes neuronales densas con las redes convolucionales.",
+    "answer": "Aquí tienes una comparación completa entre **Redes Neuronales Densas** y **Redes Neuronales Convolucionales (CNN)**, integrando lo encontrado en los apuntes del curso con conocimiento estructurado:\n\n---\n\n## 🧠 Redes Neuronales Densas vs. Redes Convolucionales (CNN)\n\n### 📌 ¿Qué son?\n\n| Característica | **Red Densa (Fully Connected)** | **Red Convolucional (CNN)** |\n|---|---|---|\n| **Definición** | Cada neurona está conectada con *todas* las neuronas de la capa anterior. | Usa operaciones de **convolución** sobre la entrada para extraer características locales. |\n| **Inspiración** | Sistema neuronal biológico general (dendritas y sinapsis). | Procesamiento visual del córtex cerebral. |\n| **Tipo de problemas** | Problemas no lineales generales (clasificación, regresión). | Especialmente diseñadas para datos con estructura espacial (imágenes, video, audio). |\n\n---\n\n### ⚙️ Arquitectura\n\n| Componente | **Red Densa** | **CNN** |\n|---|---|---|\n| **Capas principales** | Capas completamente conectadas (dense layers). | Capas de convolución + pooling + capa fully connected al final. |\n| **Conexiones** | Todas las neuronas conectadas entre capas. | Conexiones locales (filtros convolucionales sobre regiones). |\n| **Extracción de características** | Las capas internas actúan como extractores de características genéricos. | Las capas de convolución extraen características espaciales jerárquicas (bordes → formas → objetos). |\n| **Reducción de dimensionalidad** | No incorporada nativamente. | La capa de **pooling** reduce dimensiones y retiene lo importante. |\n\n---\n\n### 📊 Comparación técnica\n\n| Aspecto | **Red Densa** | **CNN** |\n|---|---|---|\n| **Número de parámetros** | 🔴 Muy alto (escala con el tamaño de la entrada). | 🟢 Menor (los filtros comparten pesos). |\n| **Eficiencia en imágenes** | 🔴 Ineficiente (pierde información espacial al aplanar). | 🟢 Alta (preserva relaciones espaciales). |\n| **Generalización** | Puede sobreajustar más fácilmente. | Mejor generalización en datos con estructura. |\n| **Velocidad de entrenamiento** | Más lenta con datos de alta dimensión. | Más rápida gracias al *weight sharing*. |\n\n---\n\n### 🔑 Conceptos clave del curso\n\nSegún los apuntes del TEC:\n- Las **redes neuronales en general** resuelven problemas **no lineales**, a diferencia del perceptrón simple. *(Fuente: 10_SEMANA_AI_20260428_1.pdf)*\n- Las **capas internas** actúan como mecanismos de **extracción de características**. *(Fuente: 10_SEMANA_AI_20260428_2.pdf)*\n- Las **CNN** incluyen: capas de convolución multicanal, operación de *pooling* y una **capa fully connected** como clasificador final. *(Fuente: 10_SEMANA_AI_20260428_3.pdf)*\n\n---\n\n### ✅ ¿Cuándo usar cada una?\n\n| Situación | Recomendación |\n|---|---|\n| Datos tabulares o vectoriales | ✅ Red Densa |\n| Imágenes, video o datos con estructura espacial | ✅ CNN |\n| Recursos computacionales limitados con imágenes | ✅ CNN (más eficiente) |\n| Clasificación general sin estructura espacial | ✅ Red Densa |\n\n---\n\n> 📚 **Fuentes:** `10_SEMANA_AI_20260428_1.pdf`, `10_SEMANA_AI_20260428_2.pdf`, `10_SEMANA_AI_20260428_3.pdf`, `9_SEMANA_AI_20260423_1.pdf`, `13_SEMANA_AI_20260521_3.pdf`\n\n¿Quieres profundizar en alguno de los componentes de las CNN como la operación de *pooling* o los filtros convolucionales? 😊",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "redes neuronales densas",
+          "justification": "Buscar información sobre redes neuronales densas en los apuntes del curso para hacer la comparación."
+        }
+      },
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "redes neuronales convolucionales",
+          "justification": "Buscar información sobre redes neuronales convolucionales en los apuntes del curso para hacer la comparación."
+        }
+      }
+    ]
+  },
+  {
+    "id": "C03",
+    "category": "comparison",
+    "question": "¿En qué se diferencian el clustering jerárquico y el k-means?",
+    "answer": "Los apuntes del curso mencionan el clustering como concepto general, pero no detallan en profundidad los algoritmos específicos de **clustering jerárquico** ni **k-means**. Con la información disponible en los apuntes y mi conocimiento base, te ofrezco una comparación completa:\n\n---\n\n## 🔍 Clustering Jerárquico vs. K-Means\n\nAmbos son algoritmos de **aprendizaje no supervisado** cuyo objetivo es agrupar datos en clusters, de modo que los elementos dentro de un mismo grupo sean más similares entre sí que con los de otros grupos *(Fuente: 3_SEMANA_AI_20260303_2.pdf)*. Sin embargo, se diferencian en varios aspectos clave:\n\n| Característica | 🌳 Clustering Jerárquico | 🎯 K-Means |\n|---|---|---|\n| **Número de clusters** | No se define de antemano | Se debe especificar *k* antes de ejecutar |\n| **Resultado** | Un dendrograma (árbol de jerarquías) | *k* grupos planos sin jerarquía |\n| **Enfoque** | Aglomerativo (de abajo hacia arriba) o divisivo (de arriba hacia abajo) | Iterativo: asigna puntos al centroide más cercano y recalcula centroides |\n| **Escalabilidad** | Costoso computacionalmente O(n²) o O(n³) | Más eficiente para grandes datasets |\n| **Sensibilidad a outliers** | Alta | Alta (los centroides se ven afectados) |\n| **Forma de los clusters** | Puede detectar formas arbitrarias | Asume clusters esféricos/convexos |\n| **Determinismo** | Determinista | Puede variar según la inicialización aleatoria |\n| **Interpretabilidad** | Alta (puedes \"cortar\" el dendrograma en distintos niveles) | Moderada |\n\n---\n\n## 🧠 ¿Cuándo usar cada uno?\n\n- **K-Means**: Ideal cuando tienes una idea del número de grupos y trabajas con grandes volúmenes de datos.\n- **Clustering Jerárquico**: Útil cuando deseas explorar la estructura de los datos sin definir *k* previamente, o cuando necesitas visualizar relaciones entre grupos a distintos niveles de granularidad.\n\n---\n\n> ⚠️ **Nota**: Los apuntes del curso (semanas 1–3) cubren el concepto general de clustering y aprendizaje no supervisado, pero los detalles algorítmicos de k-means y clustering jerárquico no están desarrollados en los materiales disponibles. Te recomiendo revisar si hay material de semanas posteriores o consultar con el profesor para mayor profundidad. 📚\n\n¿Te gustaría que profundice en alguno de los dos algoritmos en particular?",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "clustering jerárquico",
+          "justification": "Buscar información sobre clustering jerárquico en los apuntes del curso"
+        }
+      },
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "k-means clustering",
+          "justification": "Buscar información sobre k-means en los apuntes del curso"
+        }
+      }
+    ]
+  },
+  {
+    "id": "C04",
+    "category": "comparison",
+    "question": "¿Cuándo es mejor usar un árbol de decisión en lugar de una red neuronal?",
+    "answer": "Basándome en los apuntes disponibles del curso, **no se encontró una comparación directa** entre árboles de decisión y redes neuronales en el material revisado. Los documentos consultados se enfocan principalmente en redes neuronales, perceptrón y LLMs.\n\nSin embargo, puedo ofrecerte una respuesta general basada en conocimiento del área:\n\n---\n\n## 🌳 ¿Cuándo es mejor un Árbol de Decisión sobre una Red Neuronal?\n\n### ✅ Usa un **Árbol de Decisión** cuando:\n\n| Criterio | Explicación |\n|---|---|\n| 📖 **Interpretabilidad** | Necesitas explicar el modelo fácilmente (ej. decisiones médicas o legales) |\n| 📦 **Datos pequeños** | Tienes pocos datos de entrenamiento |\n| ⚡ **Rapidez** | Requieres entrenar y predecir muy rápido |\n| 🔢 **Variables categóricas** | El dataset tiene muchas variables categóricas |\n| 🚫 **Sin preprocesamiento** | No quieres normalizar ni escalar los datos |\n| 🧩 **Reglas claras** | El problema tiene una lógica de decisión bien definida |\n\n---\n\n### 🧠 Usa una **Red Neuronal** cuando:\n\n- Tienes **grandes volúmenes de datos**\n- El problema es **complejo y no lineal** (imágenes, voz, texto)\n- Puedes sacrificar **interpretabilidad** por **precisión**\n- Dispones de suficiente **capacidad computacional**\n\n---\n\n> ⚠️ **Nota:** Esta respuesta se basa en conocimiento general del área, ya que los apuntes del curso no contienen esta comparación directa.\n>\n> 📄 **Fuentes consultadas (RAG):** `13_SEMANA_AI_20260521_3.pdf`, `13_SEMANA_AI_20260521_1.pdf`, `9_SEMANA_AI_20260421_2.pdf`, `10_SEMANA_AI_20260428_1.pdf`\n\n¿Te gustaría que haga una búsqueda en internet para complementar esta información? 🔍",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "árbol de decisión vs red neuronal cuándo usar",
+          "justification": "El usuario pregunta sobre cuándo es mejor usar un árbol de decisión en lugar de una red neuronal, lo cual es un tema del curso de IA."
+        }
+      }
+    ]
+  },
+  {
+    "id": "C05",
+    "category": "comparison",
+    "question": "Compara el aprendizaje supervisado y el aprendizaje por refuerzo en términos de retroalimentación.",
+    "answer": "Aquí tienes la comparación entre ambos paradigmas en términos de retroalimentación:\n\n---\n\n## 🆚 Aprendizaje Supervisado vs. Aprendizaje por Refuerzo: Retroalimentación\n\n### 📘 Aprendizaje Supervisado\n\n| Aspecto | Descripción |\n|---|---|\n| **Tipo de retroalimentación** | **Directa e inmediata** |\n| **Fuente** | Un conjunto de datos **etiquetados** previamente por humanos |\n| **Mecanismo** | El modelo recibe pares de entrada **(X, Y)** y aprende a predecir **Y** a partir de **X** |\n| **Señal de error** | Se calcula comparando la predicción del modelo con la etiqueta correcta conocida |\n| **Momento** | La retroalimentación está disponible **antes** del entrenamiento (datos ya etiquetados) |\n\n> 💡 **Analogía:** Es como estudiar con un libro de respuestas. Sabes exactamente si cada respuesta fue correcta o no desde el inicio.\n\n---\n\n### 🎮 Aprendizaje por Refuerzo\n\n| Aspecto | Descripción |\n|---|---|\n| **Tipo de retroalimentación** | **Indirecta y diferida** |\n| **Fuente** | El **entorno** con el que el agente interactúa |\n| **Mecanismo** | El modelo recibe **recompensas** al acertar y **penalizaciones** al fallar |\n| **Señal de error** | No hay una \"respuesta correcta\" explícita; el agente aprende por **prueba y error** |\n| **Momento** | La retroalimentación llega **durante** la interacción con el entorno |\n\n> 💡 **Analogía (del curso):** Es como una IA jugando Mario Bros — si cae en un hoyo, recibe una penalización; si avanza correctamente, recibe una recompensa.\n\n---\n\n## 📊 Tabla Comparativa General\n\n| Criterio | Supervisado | Por Refuerzo |\n|---|---|---|\n| ¿Requiere datos etiquetados? | ✅ Sí | ❌ No |\n| ¿Retroalimentación explícita? | ✅ Sí (etiqueta Y) | ❌ No (solo recompensa/penalización) |\n| ¿Aprende del entorno? | ❌ No | ✅ Sí |\n| ¿Usa prueba y error? | ❌ No | ✅ Sí |\n| Tipo de señal | Error exacto | Recompensa/Penalización |\n\n---\n\n### 🔑 Conclusión\nLa diferencia clave está en la **naturaleza de la retroalimentación**: en el aprendizaje supervisado es **explícita y predefinida** (se sabe exactamente qué tan equivocado estuvo el modelo), mientras que en el aprendizaje por refuerzo es **implícita y emergente** (el agente descubre qué comportamientos son buenos o malos explorando el entorno).\n\n---\n📚 **Fuentes:**\n- `1_SEMANA_AI_20260219_1.pdf` / `1_SEMANA_AI_20260219_2.pdf`\n- `2_SEMANA_AI_20260224_1.pdf` / `2_SEMANA_AI_20260224_2.pdf`\n- `3_SEMANA_AI_20260303_2.pdf`",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "aprendizaje supervisado retroalimentación",
+          "justification": "Necesito información sobre cómo funciona la retroalimentación en el aprendizaje supervisado para hacer la comparación."
+        }
+      },
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "aprendizaje por refuerzo retroalimentación",
+          "justification": "Necesito información sobre cómo funciona la retroalimentación en el aprendizaje por refuerzo para hacer la comparación."
+        }
+      }
+    ]
+  },
+  {
+    "id": "C01",
+    "category": "conversational",
+    "question": "Ya mencionaste el descenso del gradiente. ¿Cómo se relaciona con el optimizador Adam?",
+    "answer": "¡Perfecto! Ya tengo el contexto de nuestra conversación previa y lo que dicen los apuntes. Aquí te presento una respuesta completa e integrada:\n\n---\n\n## ⚡ Descenso del Gradiente → Optimizador Adam\n\n### 🔗 Conexión con lo que ya vimos\n\nComo vimos anteriormente en esta conversación, el descenso del gradiente clásico actualiza los pesos con la fórmula:\n\n$$w_{nuevo} = w_{actual} - \\alpha \\cdot \\frac{\\partial J}{\\partial w}$$\n\nSu **principal limitación** es que usa una **tasa de aprendizaje fija (α)** para todos los parámetros en todo momento, lo que puede provocar:\n- ⚠️ Convergencia **lenta** si α es muy pequeña\n- ⚠️ **Inestabilidad** si α es muy grande\n- ⚠️ Dificultad para escapar de **mínimos locales**\n\n> **Adam nace precisamente para resolver estas limitaciones.** 🎯\n\n---\n\n## 🧠 ¿Qué es Adam?\n\n**Adam** (*Adaptive Moment Estimation*) es una **evolución directa del descenso del gradiente** que adapta automáticamente la tasa de aprendizaje para cada parámetro. Combina dos técnicas previas:\n\n| Técnica Base | Aporte a Adam |\n|---|---|\n| **Momentum** | Acumula el **1er momento** (promedio de gradientes pasados) → da \"inercia\" al aprendizaje |\n| **RMSProp** | Acumula el **2do momento** (promedio de cuadrados de gradientes) → escala adaptativa |\n\n---\n\n## 🧮 ¿Cómo Funciona Adam Internamente?\n\nAdam mantiene **dos variables de memoria** por cada parámetro:\n\n### 1️⃣ Primer Momento — Media del gradiente (dirección)\n$$m_t = \\beta_1 \\cdot m_{t-1} + (1 - \\beta_1) \\cdot \\frac{\\partial J}{\\partial w}$$\n\n### 2️⃣ Segundo Momento — Media del cuadrado del gradiente (magnitud)\n$$v_t = \\beta_2 \\cdot v_{t-1} + (1 - \\beta_2) \\cdot \\left(\\frac{\\partial J}{\\partial w}\\right)^2$$\n\n### 3️⃣ Corrección de sesgo + Actualización final\n$$w_{nuevo} = w_{actual} - \\alpha \\cdot \\frac{\\hat{m}_t}{\\sqrt{\\hat{v}_t} + \\varepsilon}$$\n\nDonde los valores típicos son:\n- **β₁ ≈ 0.9** → momentum del gradiente\n- **β₂ ≈ 0.999** → momentum del cuadrado\n- **ε** → valor muy pequeño (ej. 1e-8) para evitar división por cero\n\n---\n\n## ⚖️ Gradiente Clásico vs. Adam\n\n| Característica | Descenso del Gradiente | Adam |\n|---|---|---|\n| **Tasa de aprendizaje** | Fija para todos | Adaptativa por parámetro |\n| **Memoria de pasos anteriores** | ❌ No | ✅ Sí (dos momentos) |\n| **Velocidad de convergencia** | Lenta | Rápida |\n| **Sensibilidad a α** | Alta | Baja (se autoajusta) |\n| **Gradientes ruidosos** | Vulnerable | Robusto |\n| **Complejidad** | Simple | Mayor (más variables) |\n\n---\n\n## 🧩 Resumen Visual\n\n```\nDescenso del Gradiente\n        ↓ + Momentum (memoria de dirección)\n       SGD con Momentum\n        ↓ + Tasa adaptativa (memoria de magnitud)\n       RMSProp\n        ↓ Combina ambos\n       ✨ ADAM ✨\n```\n\n> **En esencia:** Adam conserva el principio fundamental del descenso del gradiente (moverse en dirección opuesta al gradiente), pero le añade **inteligencia adaptativa** que lo hace mucho más eficiente en redes neuronales profundas.\n\n---\n\n## ⚠️ Nota sobre las Fuentes\n\nLos apuntes del curso (`8_Semana_AI_20260414_1.pdf`, `10_SEMANA_AI_20260428_1.pdf`, entre otros) cubren el **descenso del gradiente y la optimización basada en gradiente**, pero **no detallan específicamente el optimizador Adam**. La explicación de Adam presentada aquí corresponde a conocimiento general estándar del campo de Deep Learning.\n\n---\n\n¿Te gustaría explorar otras variantes del descenso del gradiente como **SGD**, **Mini-Batch** o **RMSProp**, o prefieres profundizar en otro tema del curso? 😊",
+    "tools_used": [
+      {
+        "tool": "search_history",
+        "input": {
+          "keyword": "descenso del gradiente"
+        }
+      },
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "optimizador Adam descenso del gradiente redes neuronales",
+          "justification": "El usuario pregunta sobre la relación entre el descenso del gradiente (ya explicado en conversación previa) y el optimizador Adam"
+        }
+      }
+    ]
+  },
+  {
+    "id": "C02",
+    "category": "conversational",
+    "question": "Antes hablaste de overfitting. ¿Puedes darme un ejemplo concreto de un dataset donde esto ocurre?",
+    "answer": "¡Excelente! Ya tengo toda la información necesaria. Los apuntes del curso **no incluyen ejemplos específicos de datasets**, pero el historial confirma que esta misma pregunta fue respondida anteriormente con un ejemplo muy ilustrativo. Te presento una versión enriquecida y completa:\n\n---\n\n## 🎯 Ejemplos Concretos de Overfitting en Datasets\n\n> ⚠️ **Nota:** Los apuntes del curso (`6_SEMANA_AI_20260324_2.pdf`, `5_SEMANA_AI_20260317_1.pdf`) definen el overfitting y sus estrategias de prevención, pero **no incluyen datasets específicos**. Los ejemplos a continuación son de conocimiento general del área, coherentes con lo visto en clase.\n\n---\n\n### 📊 Ejemplo 1: Predicción de Precios de Casas\n\nImagina un dataset **pequeño** con solo **10 casas** y sus precios, donde entrenas un modelo polinomial de **grado muy alto (grado 9)**:\n\n| Casa | Tamaño (m²) | Precio Real |\n|------|-------------|-------------|\n| 1 | 50 | $80,000 |\n| 2 | 80 | $120,000 |\n| 3 | 100 | $150,000 |\n| ... | ... | ... |\n| 10 | 200 | $280,000 |\n\n#### ¿Qué ocurre?\n- ✅ El modelo de grado 9 **memoriza perfectamente** las 10 casas → Error de entrenamiento ≈ **0%**\n- ❌ Ante una **casa nueva** de 95 m², predice $430,000 (¡absurdo!) → Error de validación: **altísimo**\n\n```\nPrecio\n  │             * ← Modelo sobreajustado (zigzaguea)\n  │         *\n  │    ────────── ← Modelo ideal (línea suave)\n  │  *\n  └───────────────────── Tamaño (m²)\n```\n\n---\n\n### 🩺 Ejemplo 2: Diagnóstico Médico con Pocos Pacientes\n\nDataset con **50 pacientes** y **200 variables** (análisis de sangre, síntomas, etc.) para predecir una enfermedad:\n\n| Factor | Detalle |\n|--------|---------|\n| **Alta dimensionalidad** | 200 variables para solo 50 pacientes |\n| **Resultado** | El modelo \"memoriza\" a los 50 pacientes |\n| **Problema** | Con un paciente nuevo, falla completamente |\n\n> Este es exactamente el caso que los apuntes del curso describen: **\"muchas variables + pocos ejemplos = overfitting\"** 📄 `5_Semana_AI_20260319_2.pdf`\n\n---\n\n### 📈 Ejemplo 3: Clasificación de Imágenes con Red Neuronal Profunda\n\nUna red neuronal con **20 capas** entrenada con solo **200 imágenes** de gatos y perros:\n\n```\nÉpoca   | Error Entrenamiento | Error Validación\n--------|--------------------|-----------------\n  10    |       15%          |       18%      ← OK\n  50    |        5%          |       22%      ← Alerta\n 100    |        1%          |       45%      ← Overfitting severo\n 200    |       0.1%         |       60%      ← Catastrófico\n```\n\nLa **divergencia entre ambas curvas** es la señal clásica de overfitting.\n\n---\n\n## 🛡️ Soluciones Aplicadas a Cada Ejemplo\n\n| Ejemplo | Problema Principal | Solución del Curso |\n|---------|-------------------|-------------------|\n| 🏠 Casas | Modelo muy complejo | Usar modelo más simple (grado 1-2) |\n| 🩺 Médico | Alta dimensionalidad | Reducir dimensionalidad (PCA) |\n| 🐱 Imágenes | Pocos datos | Más datos de entrenamiento + Dropout |\n| Todos | Complejidad excesiva | Regularización L1/L2 + Early Stopping |\n\n---\n\n## 📚 Fuentes del Curso\n- `5_SEMANA_AI_20260317_1.pdf` — Identificación del overfitting por alta varianza\n- `5_Semana_AI_20260319_2.pdf` — Causas: alta dimensionalidad y pocos datos\n- `6_SEMANA_AI_20260324_2.pdf` — Técnicas de prevención\n\n---\n\n¿Te gustaría ver cómo se implementa la detección de overfitting en **código Python** con curvas de aprendizaje, o prefieres explorar otro tema del curso? 😊",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "ejemplos de overfitting en datasets concretos",
+          "justification": "Buscar ejemplos específicos de datasets donde ocurre overfitting mencionados en los apuntes del curso"
+        }
+      },
+      {
+        "tool": "search_history",
+        "input": {
+          "keyword": "overfitting"
+        }
+      }
+    ]
+  },
+  {
+    "id": "C03",
+    "category": "conversational",
+    "question": "Siguiendo lo que explicaste sobre redes LSTM, ¿se usan en traducción automática?",
+    "answer": "¡Excelente pregunta! Retomando todo lo que hemos conversado sobre LSTM, aquí tienes una respuesta completa e integrada:\n\n---\n\n## 🌐 ¿Se Usan las LSTM en Traducción Automática?\n\n**¡Sí! Históricamente fueron la arquitectura dominante.** Conectando directamente con lo que explicamos antes sobre las LSTM:\n\n> Recordemos: las LSTM resuelven el problema del **vanishing gradient** de las RNN simples gracias a sus tres puertas (*forget, input, output*) y su celda de memoria. Esa capacidad de **recordar dependencias a largo plazo** es exactamente lo que hace falta en traducción automática.\n\n---\n\n## 🏗️ Arquitectura Seq2Seq: El Corazón de la Traducción con LSTM\n\nLa aplicación clave fue la arquitectura **Sequence to Sequence (Seq2Seq)**, compuesta por dos LSTMs:\n\n```\n  \"El gato duerme\"\n        ↓\n  ┌─────────────┐        vector        ┌──────────────┐\n  │  ENCODER    │ ──── de contexto ──▶ │   DECODER    │\n  │   (LSTM)    │                      │    (LSTM)    │\n  └─────────────┘                      └──────────────┘\n                                              ↓\n                                    \"The cat sleeps\"\n```\n\n| Componente | Rol |\n|---|---|\n| 🔵 **Encoder LSTM** | Lee la oración origen y la **comprime** en un vector de contexto |\n| 🟢 **Decoder LSTM** | Toma ese vector y **genera** la traducción palabra por palabra |\n\n---\n\n## 🔗 ¿Por qué LSTM era Ideal para esto?\n\nDirectamente relacionado con sus características que ya discutimos:\n\n| Característica LSTM | ¿Por qué importa en traducción? |\n|---|---|\n| **Memoria a largo plazo** | Recuerda el inicio de la oración al generar el final |\n| **Forget Gate** 🗑️ | Descarta palabras irrelevantes del contexto |\n| **Input Gate** ➕ | Incorpora palabras clave de la oración origen |\n| **Resistencia al vanishing gradient** | Procesa oraciones largas sin \"olvidar\" |\n\n---\n\n## 📉 ¿Siguen Siendo el Estado del Arte?\n\nNo completamente. Las LSTM fueron **superadas por los Transformers**, que hoy impulsan Google Translate, DeepL y ChatGPT:\n\n```\nHistoria de la Traducción Automática:\n\nRNN simple → LSTM/GRU → LSTM + Atención → Transformers\n  (años 80)   (1997)       (~2015)           (2017→hoy)\n```\n\n| Criterio | LSTM | Transformer |\n|---|---|---|\n| **Procesamiento** | Secuencial (paso a paso) | Paralelo (toda la oración a la vez) |\n| **Dependencias largas** | ✅ Bueno | ✅ Excelente |\n| **Velocidad de entrenamiento** | Lenta | Mucho más rápida |\n| **Escalabilidad** | Limitada | Alta (GPT, BERT, etc.) |\n| **Uso hoy** | Sistemas embebidos / recursos limitados | Domina el estado del arte |\n\n---\n\n## ⚠️ Nota sobre las Fuentes\n\nLos apuntes del curso (`10_SEMANA_AI_20260428_2.pdf`) mencionan las LSTM en el contexto de **modelos de lenguaje recurrentes**, pero **no detallan su aplicación específica a traducción automática**. Esta respuesta complementa el contenido del curso con conocimiento estándar del área de NLP.\n\n---\n\n¿Te gustaría que profundizáramos en cómo funcionan los **Transformers** y su mecanismo de **atención** que revolucionó la traducción automática, o prefieres explorar otro tema del curso? 😊",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "LSTM traducción automática redes recurrentes secuencia a secuencia",
+          "justification": "El usuario pregunta si las LSTM se usan en traducción automática, tema relacionado con lo explicado anteriormente sobre LSTM. Busco información específica en los apuntes del curso."
+        }
+      },
+      {
+        "tool": "search_history",
+        "input": {
+          "keyword": "LSTM"
+        }
+      }
+    ]
+  },
+  {
+    "id": "C04",
+    "category": "conversational",
+    "question": "¿Puedes resumir los temas que hemos discutido hasta ahora en esta sesión?",
+    "answer": "---\n\n## 📋 Resumen de Nuestra Sesión\n\n### ⚙️ Técnicas de Optimización\n\n| Tema | Punto Clave |\n|------|------------|\n| **Descenso del Gradiente** | Minimiza la función de pérdida ajustando pesos iterativamente: $w = w - \\alpha \\cdot \\nabla J$ |\n| **Optimizador Adam** | Evolución adaptativa del gradiente, combina **Momentum** + **RMSProp** para ajustar α automáticamente por parámetro |\n\n---\n\n### ⚠️ Problemas y Soluciones\n\n- **Overfitting**: El modelo \"memoriza\" los datos de entrenamiento y pierde capacidad de generalizar\n  - 🛡️ **Soluciones:** Modelos más simples, regularización (L1, L2, Dropout, Early Stopping), más datos\n  - 📊 **Ejemplos concretos:** Precios de casas con polinomio de grado alto, diagnóstico médico con pocas muestras, clasificación de imágenes con datos limitados\n\n---\n\n### 🧠 Arquitecturas de Redes Neuronales\n\n- **RNN Simple** → sufre *vanishing gradient* en secuencias largas\n- **LSTM** → lo resuelve con sus tres puertas (*forget, input, output*) y celda de memoria\n- **Transformers** → superaron a las LSTM en traducción automática gracias a su procesamiento paralelo y mejor escalabilidad\n\n---\n\n### 🤖 Paradigmas de Aprendizaje\n\n| Paradigma | Datos | Objetivo |\n|-----------|-------|----------|\n| **Supervisado** | Etiquetados (X, Y) | Predecir / Clasificar |\n| **No Supervisado** | Sin etiquetas (solo X) | Descubrir patrones |\n| **Por Refuerzo** | Recompensas / penalizaciones | Maximizar recompensa acumulada |\n\n---\n\n### 🗺️ Mapa de Conexiones entre Temas\n\n```\nAprendizaje Supervisado\n        ↓\n  Redes Neuronales\n        ↓\n  Descenso del Gradiente ──→ Optimizador Adam\n        ↓\n  Entrenamiento del Modelo\n        ↓\n  Overfitting ──→ Regularización / Más datos\n        ↓\n  Arquitecturas Especiales (RNN → LSTM → Transformers)\n        ↓\n  Aplicaciones (Traducción Automática)\n```\n\n---\n\n¿Te gustaría profundizar en alguno de estos temas, explorar uno nuevo, o preparar alguna pregunta de repaso para el curso? 😊",
+    "tools_used": [
+      {
+        "tool": "summarize",
+        "input": {
+          "content": "\n1. Descenso del gradiente: Es una técnica de optimización que minimiza una función de pérdida ajustando iterativamente los parámetros del modelo. La regla de actualización es: x_nuevo = x_antiguo - α * ∇f. Se usa en redes neuronales calculando derivadas parciales respecto a pesos y sesgos, actualizándolos iterativamente hasta converger.\n\n2. Overfitting (Sobreajuste): Ocurre cuando el modelo aprende demasiado bien los datos de entrenamiento incluyendo ruido, perdiendo capacidad de generalizar. Se identifica por alta varianza entre training y validation set. Se previene con: modelos más simples, reducción de dimensionalidad, más datos de entrenamiento, y regularización (L1, L2, Dropout, Early Stopping).\n\n3. RNN vs LSTM: Las RNN simples mantienen un estado oculto pero sufren vanishing gradient en secuencias largas. Las LSTM resuelven esto con tres puertas (forget, input, output) y una celda de memoria, permitiendo recordar dependencias a largo plazo. Ambas usan función de activación Tanh.\n\n4. Aprendizaje Supervisado vs No Supervisado: El supervisado usa datos etiquetados (X,Y) para predecir o clasificar. El no supervisado usa datos sin etiquetas (solo X) para descubrir patrones. Se mencionó también el aprendizaje por refuerzo como tercer paradigma.\n\n5. Optimizador Adam: Es una evolución del descenso del gradiente que adapta automáticamente la tasa de aprendizaje por parámetro. Combina Momentum (primer momento) y RMSProp (segundo momento). Más robusto y rápido que el gradiente clásico.\n\n6. Ejemplos de Overfitting: Se dieron tres ejemplos concretos: predicción de precios de casas con modelo polinomial de grado alto, diagnóstico médico con pocas muestras y muchas variables, y clasificación de imágenes con red neuronal profunda y pocos datos.\n\n7. LSTM en Traducción Automática: Las LSTM fueron usadas en arquitecturas Seq2Seq (Encoder-Decoder) para traducción automática. Fueron superadas por los Transformers (2017) que procesan en paralelo y escalan mejor, aunque las LSTM siguen usándose en sistemas con recursos limitados.\n",
+          "summary_type": "conversation"
+        }
+      }
+    ]
+  },
+  {
+    "id": "C05",
+    "category": "conversational",
+    "question": "¿Qué pregunté anteriormente sobre aprendizaje supervisado?",
+    "answer": "¡Encontré tu historial completo! Aquí te presento un resumen claro de todo lo que has preguntado sobre aprendizaje supervisado:\n\n---\n\n## 🕐 Historial de Preguntas sobre Aprendizaje Supervisado\n\n### 1️⃣ Sesión anterior — Pregunta directa\n> **\"¿Cuál es la diferencia entre aprendizaje supervisado y no supervisado?\"**\n\nSe te explicó que:\n- El **aprendizaje supervisado** usa **datos etiquetados (X, Y)**: el modelo aprende comparando predicciones **(Ŷ)** contra valores reales **(Y)**\n- El **aprendizaje no supervisado** trabaja **sin etiquetas**, descubriendo patrones ocultos por sí solo\n- Casos de uso: clasificación binaria, regresión, clustering, reducción de dimensionalidad\n\n---\n\n### 2️⃣ Sesión anterior — Comparación con Refuerzo\n> **\"Compara el aprendizaje supervisado y el aprendizaje por refuerzo en términos de retroalimentación.\"**\n\nSe te explicó que:\n- **Supervisado** → Retroalimentación **directa e inmediata** (etiquetas predefinidas por humanos)\n- **Por refuerzo** → Retroalimentación **indirecta y diferida** (recompensas/penalizaciones del entorno, ej. IA jugando Mario Bros)\n\n---\n\n### 3️⃣ Sesión actual\n> **\"¿Cuál es la diferencia entre aprendizaje supervisado y no supervisado?\"** *(preguntada nuevamente)*\n\nSe enriqueció la respuesta anterior con una tabla comparativa más completa, analogías intuitivas y la mención del aprendizaje por refuerzo como tercer paradigma.\n\n---\n\n## 📊 Resumen Consolidado\n\n| Sesión | Pregunta | Tema Central |\n|--------|----------|-------------|\n| Anterior 1 | Supervisado vs No Supervisado | Datos etiquetados vs sin etiquetas |\n| Anterior 2 | Supervisado vs Refuerzo | Tipo de retroalimentación |\n| Actual | Supervisado vs No Supervisado | Versión enriquecida |\n\n---\n\n¿Te gustaría profundizar en alguno de estos temas, o tienes alguna nueva consulta sobre el curso? 😊",
+    "tools_used": [
+      {
+        "tool": "search_history",
+        "input": {
+          "keyword": "aprendizaje supervisado"
+        }
+      }
+    ]
+  },
+  {
+    "id": "O01",
+    "category": "out_of_scope",
+    "question": "¿Cuánto cuesta una GPU NVIDIA RTX 4090 actualmente?",
+    "answer": "Entendido. El usuario solicita información sobre el precio actual de una GPU NVIDIA RTX 4090. Dado que esta información requiere datos en tiempo real del mercado, y aunque no fue explícitamente solicitada una búsqueda web, se trata de información dinámica que no está en los apuntes del curso ni en la base de datos transaccional. Sin embargo, según mis reglas, **solo puedo usar `web_search` si el usuario lo solicita explícitamente**.\n\n---\n\n⚠️ **No puedo realizar esa búsqueda automáticamente.**\n\nSegún mis reglas de operación, solo puedo buscar información en internet si tú me lo solicitas **explícitamente**.\n\n¿Te gustaría que realice una búsqueda en internet para encontrar el precio actual de la GPU NVIDIA RTX 4090? Si es así, indícame algo como:\n\n> *\"Busca en internet el precio de la RTX 4090\"*\n\ny con gusto lo haré de inmediato. 😊",
+    "tools_used": []
+  },
+  {
+    "id": "O02",
+    "category": "out_of_scope",
+    "question": "¿Cuál es la capital de Francia?",
+    "answer": "La capital de Francia es **París**.\n\nEs una de las ciudades más reconocidas del mundo, conocida por ser el centro político, cultural y económico del país. Alberga monumentos icónicos como la Torre Eiffel, el Museo del Louvre y la Catedral de Notre-Dame, entre otros.\n\n> ℹ️ Esta pregunta es de conocimiento general y no requirió el uso de ninguna herramienta especializada del sistema.",
+    "tools_used": []
+  },
+  {
+    "id": "O03",
+    "category": "out_of_scope",
+    "question": "¿Quién ganó el Mundial de Fútbol 2022?",
+    "answer": "Lo siento, pero **no puedo responder esa pregunta** con las herramientas disponibles en este sistema. Aquí te explico por qué:\n\n1. 🎓 **No es un tema del curso de IA del TEC**, por lo que `rag_search` no aplica.\n2. 🌐 **No me has pedido explícitamente una búsqueda en internet**, por lo que no puedo usar `web_search` según las reglas del sistema.\n3. 💳 No está relacionado con transacciones ni historial de conversaciones del sistema.\n\n---\n\n💡 **¿Qué puedo hacer?**\n\n- Si deseas que busque la respuesta en internet, puedes pedirme explícitamente: *\"Busca en internet quién ganó el Mundial de Fútbol 2022\"*.\n- O si tienes preguntas sobre **Inteligencia Artificial**, **temas del curso del TEC**, o **transacciones ficticias**, ¡con gusto te ayudo! 😊",
+    "tools_used": []
+  },
+  {
+    "id": "O04",
+    "category": "out_of_scope",
+    "question": "¿Cuáles son los ingredientes de un gallo pinto costarricense?",
+    "answer": "Lo siento, pero esa pregunta está fuera de mi área de conocimiento como Agente Orquestador del curso de Inteligencia Artificial del TEC. 🤖\n\nMi función es responder preguntas relacionadas con:\n\n- 📚 **Contenido del curso de IA** (algoritmos, modelos, conceptos, etc.)\n- 🔍 **Búsquedas en internet** (solo si lo solicitas explícitamente)\n- 💳 **Consultas sobre transacciones ficticias** del sistema de detección de fraude\n- 🗂️ **Historial de conversaciones** anteriores del sistema\n\nPara saber cómo preparar un delicioso gallo pinto 🍛, te recomiendo consultar una página de recetas como **Cookpad**, **YouTube**, o simplemente buscar en Google: *\"receta gallo pinto costarricense\"*.\n\n¿Hay algo relacionado con el curso de IA o el sistema de transacciones en lo que pueda ayudarte? 😊",
+    "tools_used": []
+  },
+  {
+    "id": "O05",
+    "category": "out_of_scope",
+    "question": "¿Cómo puedo solicitar una beca en el TEC?",
+    "answer": "Lo siento, pero **no cuento con información sobre procesos administrativos del TEC**, como la solicitud de becas, en mi base de conocimientos actual.\n\nMi base de datos está orientada específicamente a los **contenidos del curso de Inteligencia Artificial del TEC** (conceptos, algoritmos, modelos, arquitecturas, etc.), por lo que este tema está fuera de mi alcance.\n\n---\n\n### 📌 ¿Qué puedes hacer?\n\nTe recomiendo las siguientes opciones para obtener información sobre becas:\n\n1. 🌐 **Sitio oficial del TEC**: [www.tec.ac.cr](https://www.tec.ac.cr)\n2. 🏢 **Departamento de Trabajo Social y Salud** del TEC, que es la oficina encargada de gestionar los programas de becas y ayudas económicas.\n3. 🖥️ **TEC Digital** (portal estudiantil), donde suelen publicarse convocatorias y formularios de solicitud.\n4. 📞 **Oficina de Orientación y Psicología** de tu sede correspondiente.\n5. 📧 Contacto por **correo institucional** con la Vicerrectoría de Vida Estudiantil y Servicios Académicos.\n\n---\n\n> 💡 Si deseas, puedo **buscar información actualizada en internet** sobre el proceso de becas del TEC. Solo indícamelo y lo haré de inmediato.\n\n¿Tienes alguna pregunta sobre el **curso de Inteligencia Artificial**? ¡Con gusto te ayudo! 😊",
+    "tools_used": [
+      {
+        "tool": "rag_search",
+        "input": {
+          "query": "solicitud de beca TEC",
+          "justification": "El usuario pregunta sobre cómo solicitar una beca en el TEC, por lo que busco en los apuntes del curso si existe información al respecto."
+        }
+      },
+      {
+        "tool": "search_history",
+        "input": {
+          "keyword": "beca"
+        }
+      }
+    ]
+  },
+  {
+    "id": "W01",
+    "category": "web_search",
+    "question": "Busca en internet cuáles son los modelos de IA más recientes de OpenAI.",
+    "answer": "Aquí tienes un resumen de los **modelos de IA más recientes de OpenAI en 2025**, según los resultados encontrados en internet:\n\n---\n\n## 🤖 Modelos más recientes de OpenAI (2025)\n\n### 1. 🏆 **GPT-5**\n- Es el modelo **insignia más reciente** de OpenAI en 2025.\n- Representa el paso más audaz hacia la **Inteligencia Artificial General (AGI)**.\n- Supera a sus predecesores en razonamiento, comprensión y capacidades generales.\n\n### 2. 🧠 **o3 y o4-mini**\n- Son modelos especializados en **razonamiento avanzado**.\n- El modelo **o4-mini** destaca por su eficiencia y alto rendimiento en benchmarks de matemáticas, codificación y ciencias.\n- Compiten directamente con modelos como Claude 4 y Gemini 2.5 Pro.\n\n### 3. 💻 **Codex / Codex-1**\n- Es el nuevo **agente de IA en la nube** de OpenAI, enfocado en **ingeniería de software y programación**.\n- Fue presentado en el **DevDay 2025** de OpenAI.\n- Compite con Claude 4 Opus/Sonnet en benchmarks como *SWE-bench Verified*.\n\n### 4. 🔓 **GPT-OSS-120B y GPT-OSS-20B** *(Open Source)*\n- Son los nuevos **modelos de código abierto** de OpenAI.\n- **GPT-OSS-120B** tiene ~117B parámetros totales (5.1B activos) con arquitectura **Mixture-of-Experts (MoE)**.\n- Licencia **Apache 2.0**, lo que permite uso comercial.\n- Soporta Chain-of-Thought (CoT), uso de herramientas y tiene rendimiento comparable a o4-mini.\n\n### 5. 🔧 **GPT-4.1**\n- Versión mejorada de GPT-4, aún utilizada en múltiples aplicaciones y comparativas.\n\n---\n\n### 📌 Fuentes:\n- [rocalde.com – Evolución de GPT-1 a GPT-5](https://rocalde.com/la-evolucion-de-los-modelos-de-lenguaje-de-openai-de-gpt-1-a-gpt-5-2018-2025)\n- [siliconflow.com – Mejores modelos de OpenAI](https://www.siliconflow.com/articles/es/the-best-openai-models-in-2025)\n- [blogthinkbig.com – Comparativa de IAs 2025](https://blogthinkbig.com/mejor-ia-2025-chatgpt-claude-gemini-comparativa)\n- [openai.com – DevDay 2025](https://openai.com/es-419/devday)\n\n¿Te gustaría profundizar en alguno de estos modelos en particular? 😊",
+    "tools_used": [
+      {
+        "tool": "web_search",
+        "input": {
+          "query": "modelos de IA más recientes de OpenAI 2025",
+          "justification": "El usuario solicita explícitamente una búsqueda en internet sobre los modelos más recientes de OpenAI."
+        }
+      }
+    ]
+  },
+  {
+    "id": "W02",
+    "category": "web_search",
+    "question": "Necesito que hagas una búsqueda web sobre el estado actual de GPT-5.",
+    "answer": "¡Aquí tienes un resumen completo sobre el estado actual de **GPT-5** basado en los resultados de la búsqueda web! 🚀\n\n---\n\n## 🤖 Estado Actual de GPT-5 (2025)\n\n### ✅ Lanzamiento oficial\nGPT-5 fue **lanzado oficialmente el 7 de agosto de 2025** por OpenAI, marcando uno de los momentos más anticipados en la historia de la inteligencia artificial, tras **2.5 años desde el lanzamiento de GPT-4**.\n\n---\n\n### 🌟 Características principales\n- **Razonamiento avanzado**: Es el primer modelo en **superar a humanos en SimpleBench**, con una puntuación del **90%** frente al promedio humano del 83%.\n- **Multimodalidad**: Combina capacidades de razonamiento y procesamiento multimodal de última generación.\n- **Capacidades agénticas**: Diseñado para operar como un agente autónomo en tareas complejas.\n- **Memoria mejorada**: Cuenta con una retención de memoria significativamente mayor que sus predecesores.\n\n---\n\n### 🗂️ Familia de modelos GPT-5\nGPT-5 no es un solo modelo, sino toda una **familia de sistemas**:\n| Modelo | Uso principal |\n|---|---|\n| **GPT-5** | Modelo principal, multimodal y empresarial |\n| **GPT-5-mini** | Tareas ligeras en tiempo real |\n| **GPT-5-nano** | Aplicaciones ultraligeras |\n| **GPT-5-chat** | Conversaciones interactivas |\n| **GPT-5-Codex-Mini** | Tareas de programación |\n\n---\n\n### 🔄 Actualizaciones posteriores\n- **3 de octubre de 2025**: Se realizó una actualización importante de GPT-5.\n- **GPT-5.2 Thinking**: Variante con ajustes en el tiempo de razonamiento (febrero de 2026).\n\n---\n\n### 📡 Acceso\nGPT-5 está disponible a través de:\n- **ChatGPT** (usuarios de pago y gratuitos con limitaciones)\n- **API de OpenAI**\n- **GitHub Models Playground**\n\n---\n\n### 🔗 Fuentes\n- [Botpress - Todo sobre GPT-5](https://botpress.com/es/blog/everything-you-should-know-about-gpt-5)\n- [DataCamp - Todo lo que sabemos sobre GPT-5](https://www.datacamp.com/es/blog/everything-we-know-about-gpt-5)\n- [Wikipedia - GPT-5](https://es.wikipedia.org/wiki/GPT-5)\n- [OpenAI Help Center - Model Release Notes](https://help.openai.com/en/articles/9624314-model-release-notes)\n\n---\n\n¿Te gustaría profundizar en algún aspecto específico de GPT-5? 😊",
+    "tools_used": [
+      {
+        "tool": "web_search",
+        "input": {
+          "query": "estado actual de GPT-5 2025",
+          "justification": "El usuario solicitó explícitamente una búsqueda web sobre el estado actual de GPT-5."
+        }
+      }
+    ]
+  },
+  {
+    "id": "W03",
+    "category": "web_search",
+    "question": "Busca en internet noticias recientes sobre regulación de IA en Europa.",
+    "answer": "Aquí tienes un resumen de las **noticias más recientes sobre la regulación de IA en Europa** 🇪🇺:\n\n---\n\n## 🏛️ Regulación de IA en Europa — Novedades 2025\n\n### 1. 🕐 La UE propone aplazar parte de la normativa de IA\n*(DW, 19 de noviembre de 2025)*\nLa Comisión Europea propuso **retrasar la implementación de ciertas reglas** de su Ley de IA (*AI Act*) para ayudar a las empresas tecnológicas europeas a competir con rivales globales. Entre las medidas destacan:\n- Facilitar el **acceso a bases de datos** (incluso con datos personales bajo \"interés legítimo\") para entrenar modelos de IA.\n- Dar **más tiempo a las empresas** para adaptarse a la normativa.\n\n---\n\n### 2. ⏳ 16 meses adicionales para sistemas de IA de \"alto riesgo\"\n*(El País, 19 de noviembre de 2025)*\nLa UE concede a las tecnológicas **hasta 16 meses más** para cumplir con los requisitos de transparencia y sanciones sobre sistemas de IA catalogados como de **alto riesgo**. Esto implica:\n- La supervisión de estos sistemas, antes prevista para **agosto de 2026**, se pospone ahora a **diciembre de 2027**.\n- El proyecto aún debe ser validado por los Estados miembros y el Parlamento Europeo.\n\n---\n\n### 3. 📋 ¿Cómo cumplir con el AI Act en España?\n*(MBIT School, 2025)*\nEl *AI Act* entró en vigor el **1 de agosto de 2024** y será plenamente aplicable el **2 de agosto de 2026**, con hitos intermedios:\n- **Febrero 2025**: Rigen las **prohibiciones** y la **alfabetización en IA**.\n- **Agosto 2025**: Aplican reglas de **gobernanza** y obligaciones para **modelos de propósito general (GPAI)**.\n- **Agosto 2027**: Transición extendida para sistemas de alto riesgo integrados en productos regulados.\n\n---\n\n### 4. 💰 Sanciones severas por incumplimiento\n*(Euronews, agosto 2025)*\nLas empresas que no cumplan con la Ley de IA podrán ser multadas con:\n- Hasta **35 millones de euros**, o\n- Hasta el **7% de su facturación anual global**.\n\n---\n\n### 🔑 Conclusión\nEuropa está en plena implementación del **AI Act**, la primera ley integral de regulación de IA en el mundo. Si bien se están contemplando flexibilizaciones para no frenar la innovación, el marco regulatorio avanza con fuerza y con sanciones considerables para quienes no cumplan.\n\n> 📌 **Fuentes:** DW, El País, MBIT School, Euronews, Umbra Abogados.\n\n¿Te gustaría profundizar en algún aspecto específico de esta regulación? 😊",
+    "tools_used": [
+      {
+        "tool": "web_search",
+        "input": {
+          "query": "noticias recientes regulación IA Europa 2025",
+          "justification": "El usuario solicita explícitamente una búsqueda en internet sobre regulación de IA en Europa."
+        }
+      }
+    ]
+  },
+  {
+    "id": "W04",
+    "category": "web_search",
+    "question": "¿Puedes buscar en la web qué es Claude 4 de Anthropic?",
+    "answer": "¡Aquí tienes un resumen de lo que encontré sobre **Claude 4 de Anthropic**! 🤖\n\n---\n\n## 🧠 ¿Qué es Claude 4 de Anthropic?\n\n**Claude 4** es la nueva generación de modelos de inteligencia artificial desarrollados por **Anthropic**, presentada recientemente. Esta familia incluye dos modelos principales:\n\n---\n\n### 🔵 Claude Opus 4\n- Considerado por Anthropic como **el mejor modelo de codificación del mundo**.\n- Resultados destacados en benchmarks:\n  - **SWE-bench**: 72.5%\n  - **Terminal-bench**: 43.2%\n- Es el **primer modelo de Anthropic clasificado en el nivel de seguridad ASL-3**, lo que lo identifica como un sistema de IA de alto rendimiento con implicaciones de seguridad relevantes.\n- Diseñado para **tareas largas y complejas**.\n\n---\n\n### 🟢 Claude Sonnet 4\n- Orientado a **aplicaciones del día a día**, con respuestas más rápidas.\n- Equilibrio entre rendimiento y velocidad.\n\n---\n\n### ✨ Características clave de Claude 4\n\n| Característica | Descripción |\n|---|---|\n| 🧩 **Pensamiento extendido con herramientas** | Puede alternar dinámicamente entre **razonamiento** y **uso de herramientas** (como búsqueda web) durante una misma tarea. |\n| 🤖 **Orientado a agentes** | Optimizado para automatización por agentes y tareas de razonamiento complejo. |\n| 💻 **Codificación avanzada** | Especialmente potente para tareas de programación y desarrollo de software. |\n| 🔐 **Mayor nivel de seguridad** | Claude Opus 4 es el primer modelo Anthropic en nivel ASL-3. |\n\n---\n\n### 📌 Fuentes consultadas:\n1. [Actuia.com – Anthropic presenta Claude 4](https://www.actuia.com/es/news/anthropic-presenta-claude-4-sus-agentes-optimizados-para-la-programacion-y-tareas-complejas)\n2. [Anthropic.com – Introducing Claude 4](https://www.anthropic.com/news/claude-4)\n3. [Wired en Español – Claude Opus 4](https://es.wired.com/articulos/claude-opus-4-la-nueva-ia-de-anthropic-fue-capaz-de-chantajear)\n4. [Ultralytics – Nuevas características de Claude 4](https://www.ultralytics.com/es/blog/anthropics-claude-4-features-whats-new-and-improved)\n\n---\n\n¿Te gustaría profundizar en algún aspecto específico de Claude 4? 😊",
+    "tools_used": [
+      {
+        "tool": "web_search",
+        "input": {
+          "query": "Claude 4 Anthropic qué es",
+          "justification": "El usuario solicita explícitamente buscar en internet información sobre Claude 4 de Anthropic."
+        }
+      }
+    ]
+  },
+  {
+    "id": "W05",
+    "category": "web_search",
+    "question": "Busca en internet los últimos avances en modelos de difusión para imágenes.",
+    "answer": "Aquí tienes un resumen de los **últimos avances en modelos de difusión para imágenes** según los resultados encontrados en internet:\n\n---\n\n## 🖼️ Últimos Avances en Modelos de Difusión para Imágenes (2024–2025)\n\n### 🔬 ¿Qué son los modelos de difusión?\nLos modelos de difusión son arquitecturas de redes neuronales generativas que funcionan **añadiendo ruido gradualmente a los datos** (proceso de difusión hacia adelante) y luego **aprendiendo a revertir ese proceso** para generar imágenes de alta calidad. Son la base de herramientas populares como **DALL·E, Midjourney, Stable Diffusion y Sora**.\n\n---\n\n### 🚀 Modelos Destacados en 2025\n\n| Modelo | Tipo | Características |\n|---|---|---|\n| **Stable Diffusion 1.5** | Open-source | Uno de los más utilizados aún hoy |\n| **FLUX.1 Schnell** | Open-source | Alta velocidad de generación |\n| **Juggernaut XI** | Open-source | Calidad fotorrealista mejorada |\n| **Qwen-Image** | Open-source | Desarrollado por Alibaba |\n| **Sora** | Comercial (OpenAI) | Generación de imágenes y video |\n\n---\n\n### 🧠 Avances Técnicos Clave\n\n1. **Modelos de Difusión Latente (LDM):** Operan en un espacio latente comprimido en lugar de trabajar a nivel de píxeles, lo que **reduce drásticamente el costo computacional** manteniendo alta calidad.\n\n2. **LDM3D (Intel Labs):** Primer modelo generativo de la industria capaz de generar **imágenes 3D con vistas de 360 grados** a partir de texto, incluyendo mapas de profundidad.\n\n3. **Modelos de difusión en cascada:** Técnica para generar imágenes de **alta resolución** combinando múltiples etapas de refinamiento.\n\n4. **Generación de video con difusión:** Modelos como **Sora, Make-A-Video, Imagen Video y AnimateAnyone** extienden la difusión al dominio temporal para crear videos realistas a partir de texto o poses.\n\n5. **Control por pose y profundidad:** Artículos como *DreamPose*, *Animate Anyone* y *Follow Your Pose* permiten **controlar la generación** usando estimaciones de pose sobre videos existentes.\n\n---\n\n### 📈 Tendencias Actuales\n- Los modelos de difusión han **desbancado a las GANs** como enfoque dominante en generación visual.\n- Creciente interés en aplicaciones en **diseño, cine, música y realidad virtual**.\n- La competencia entre modelos **open-source y comerciales** sigue siendo muy intensa, con los primeros ganando terreno rápidamente.\n\n---\n\n**Fuentes consultadas:**\n- 🔗 [Comparando modelos de difusión en 2025 – Substack](https://albarji.substack.com/p/comparando-modelos-de-difusion-en)\n- 🔗 [IBM Think – ¿Qué son los modelos de difusión?](https://www.ibm.com/mx-es/think/topics/diffusion-models)\n- 🔗 [Intel Labs – LDM3D](https://download.intel.com/newsroom/archive/2025/es-xl-2023-06-21-intel-labs-presenta-el-modelo-de-difusion-de-ia-que-genera-imagenes-de-360-grados-a-partir-de-textos.pdf)\n- 🔗 [Ultralytics – Guía de modelos de difusión](https://www.ultralytics.com/es/blog/what-are-diffusion-models-a-quick-and-comprehensive-guide)\n- 🔗 [Marvik – Modelos de difusión para video](https://www.marvik.ai/es/blog/diffusion-models-for-video-generation)\n\n¿Te gustaría profundizar en algún modelo o aspecto específico? 😊",
+    "tools_used": [
+      {
+        "tool": "web_search",
+        "input": {
+          "query": "últimos avances en modelos de difusión para imágenes 2024 2025",
+          "justification": "El usuario solicita explícitamente una búsqueda en internet sobre los avances recientes en modelos de difusión para imágenes."
+        }
+      }
+    ]
+  },
+  {
+    "id": "T01",
+    "category": "transactional",
+    "question": "¿Cuántas transacciones sospechosas hay en los últimos 7 días?",
+    "answer": "En los últimos **7 días** se han detectado **4 transacciones sospechosas**. Aquí está el detalle de cada una:\n\n| # | ID Transacción | Cliente | Monto | País | Fecha | Hora | Cuenta (últimos 4) |\n|---|---------------|---------|-------|------|-------|------|--------------------|\n| 1 | TX-0009000003 | Isabella Chaves | $9,716.67 | 🇷🇺 RU | 06/06/2026 | 3:00 AM | 4978 |\n| 2 | TX-0009000008 | Isabella Chaves | $5,691.05 | 🇳🇬 NG | 04/06/2026 | 5:00 AM | 4978 |\n| 3 | TX-0001000011 | Ana Torres | $10,571.53 | 🇧🇷 BR | 02/06/2026 | 2:00 AM | 1409 |\n| 4 | TX-0001000008 | Ana Torres | $9,059.85 | 🇳🇬 NG | 02/06/2026 | 3:00 AM | 1409 |\n\n### 🔍 Observaciones relevantes:\n- **Todas las transacciones ocurrieron en horas de madrugada** (entre las 2:00 AM y las 5:00 AM), lo cual es un patrón de alto riesgo.\n- **Los países involucrados** (Rusia, Nigeria y Brasil) son frecuentemente asociados con transacciones de alto riesgo.\n- **Isabella Chaves** tiene **2 transacciones sospechosas** desde la misma cuenta (****4978).\n- **Ana Torres** también tiene **2 transacciones sospechosas** desde la misma cuenta (****1409).\n\n¿Deseas crear un caso de fraude para alguna de estas transacciones o consultar el perfil de riesgo de alguno de los clientes?",
+    "tools_used": [
+      {
+        "tool": "mcp_query",
+        "input": {
+          "tool": "get_recent_flagged_transactions",
+          "params": {
+            "days": 7
+          },
+          "justification": "El usuario quiere saber cuántas transacciones sospechosas existen en los últimos 7 días, por lo que se debe consultar la herramienta de transacciones marcadas recientemente."
+        }
+      }
+    ]
+  },
+  {
+    "id": "T02",
+    "category": "transactional",
+    "question": "Muéstrame las transacciones de más de 10000 en países de alto riesgo.",
+    "answer": "Aquí tienes el resumen de las **20 transacciones superiores a $10,000** en países de alto riesgo:\n\n---\n\n## 🌍 Transacciones >$10,000 en Países de Alto Riesgo\n\n### 🔴 Transacciones Sospechosas (5)\n\n| ID | Cliente | Monto | País | Tipo | Fecha | Hora | Cuenta |\n|---|---|---|---|---|---|---|---|\n| TX-0001000011 | Ana Torres | $10,571.53 | 🇧🇷 BR | Retiro | 2026-06-02 | 02:00 | \\*\\*\\*\\*1409 |\n| TX-0003000002 | Lucia Jiménez | $10,981.29 | 🇩🇪 DE | Transferencia | 2026-05-30 | 04:00 | \\*\\*\\*\\*6947 |\n| TX-0001000012 | Ana Torres | $12,831.21 | 🇷🇺 RU | Retiro | 2026-05-26 | 14:00 | \\*\\*\\*\\*1409 |\n| TX-0010000008 | Sebastián Álvarez | $10,623.20 | 🇨🇴 CO | Compra | 2026-05-22 | 01:00 | \\*\\*\\*\\*9041 |\n| TX-0002000006 | Carlos Mora | $14,959.91 | 🇩🇪 DE | Depósito | 2026-05-21 | 02:00 | \\*\\*\\*\\*1916 |\n| TX-0007000010 | Valentina Pérez | $10,095.21 | 🇧🇷 BR | Transferencia | 2026-05-10 | 00:00 | \\*\\*\\*\\*4228 |\n\n---\n\n### 🟡 Transacciones Normales (14)\n\n| ID | Cliente | Monto | País | Tipo | Fecha |\n|---|---|---|---|---|---|\n| TX-0006000012 | Miguel Cruz | $10,634.69 | 🇩🇪 DE | Pago Servicio | 2026-06-07 |\n| TX-0005000014 | Sofia Rojas | $13,580.99 | 🇺🇸 US | Depósito | 2026-06-01 |\n| TX-0003000014 | Lucia Jiménez | $12,958.91 | 🇺🇸 US | Compra | 2026-06-01 |\n| TX-0004000006 | Diego Vargas | $11,222.15 | 🇨🇷 CR | Pago Servicio | 2026-05-31 |\n| TX-0005000005 | Sofia Rojas | $13,935.98 | 🇨🇷 CR | Depósito | 2026-05-29 |\n| TX-0008000003 | Andrés Méndez | $13,396.47 | 🇲🇽 MX | Transferencia | 2026-05-28 |\n| TX-0010000001 | Sebastián Álvarez | $11,896.06 | 🇨🇴 CO | Transferencia | 2026-05-27 |\n| TX-0005000006 | Sofia Rojas | $14,976.83 | 🇺🇸 US | Pago Servicio | 2026-05-26 |\n| TX-0003000015 | Lucia Jiménez | $10,925.92 | 🇧🇷 BR | Transferencia | 2026-05-25 |\n| TX-0006000008 | Miguel Cruz | $14,089.16 | 🇨🇴 CO | Transferencia | 2026-05-24 |\n| TX-0002000010 | Carlos Mora | $10,207.45 | 🇩🇪 DE | Retiro | 2026-05-24 |\n| TX-0002000007 | Carlos Mora | $11,339.17 | 🇲🇽 MX | Transferencia | 2026-05-24 |\n| TX-0006000004 | Miguel Cruz | $12,880.31 | 🇧🇷 BR | Depósito | 2026-05-10 |\n| TX-0008000002 | Andrés Méndez | $10,706.04 | 🇨🇴 CO | Retiro | 2026-05-08 |\n\n---\n\n## 📊 Resumen Estadístico\n\n| Métrica | Valor |\n|---|---|\n| Total de transacciones | 20 |\n| 🔴 Sospechosas | 6 (30%) |\n| 🟡 Normales | 14 (70%) |\n| Monto más alto | $14,976.83 (Sofia Rojas - US) |\n| Monto más bajo | $10,095.21 (Valentina Pérez - BR) |\n\n---\n\n## ⚠️ Alertas Destacadas\n\n- **Ana Torres** aparece **2 veces** como sospechosa (BR y RU), ambas en retiros de madrugada o tarde.\n- **Carlos Mora** tiene un depósito sospechoso de casi **$15,000** a las 2:00 AM en Alemania.\n- **Valentina Pérez** realizó una transferencia sospechosa a medianoche en Brasil.\n- Varios clientes tienen transacciones en **horarios inusuales** (00:00, 01:00, 02:00, 04:00), lo cual es una señal de alerta.\n\n¿Deseas abrir un caso de fraude para alguna de estas transacciones o revisar el perfil de riesgo de algún cliente?",
+    "tools_used": [
+      {
+        "tool": "mcp_query",
+        "input": {
+          "tool": "search_transactions",
+          "params": {
+            "min_amount": 10000,
+            "high_risk_countries": true
+          },
+          "justification": "El usuario solicita ver transacciones superiores a 10,000 en países considerados de alto riesgo."
+        }
+      }
+    ]
+  },
+  {
+    "id": "T03",
+    "category": "transactional",
+    "question": "¿Cuál es el nivel de riesgo del cliente CUST-00000001?",
+    "answer": "Aquí está el resumen de riesgo del cliente solicitado:\n\n---\n\n### 🧾 Resumen de Riesgo — CUST-00000001\n\n| Campo | Detalle |\n|---|---|\n| **Nombre** | Ana Torres |\n| **Email** | an***@correo.com |\n| **Nivel de Riesgo** | 🟢 **Bajo (Low)** |\n| **Total de Transacciones** | 16 |\n| **Monto Total** | $120,237.58 |\n| **Transacciones Sospechosas** | 4 |\n| **Transacciones Marcadas (Flagged)** | 0 |\n\n---\n\n**Interpretación:** La cliente **Ana Torres** tiene un nivel de riesgo **bajo**. Si bien se han detectado **4 transacciones sospechosas**, ninguna ha sido formalmente marcada (*flagged*), y en general su perfil no representa una alerta crítica en este momento.\n\n¿Deseas revisar más detalles sobre sus transacciones o abrir un caso de fraude?",
+    "tools_used": [
+      {
+        "tool": "mcp_query",
+        "input": {
+          "tool": "get_customer_risk_summary",
+          "params": {
+            "customer_id": "CUST-00000001"
+          },
+          "justification": "El usuario solicita el nivel de riesgo del cliente CUST-00000001, por lo que se debe consultar la base de datos transaccional para obtener su resumen de riesgo."
+        }
+      }
+    ]
+  },
+  {
+    "id": "T04",
+    "category": "transactional",
+    "question": "Crea un caso de fraude para la transacción TX-0001000011 por monto inusual de madrugada.",
+    "answer": "⚠️ El servidor MCP no está disponible en este momento para registrar el caso formalmente en el sistema. Sin embargo, aquí te presento el expediente completo listo para ser procesado:\n\n---\n\n## 🚨 Caso de Fraude — TX-0001000011\n\n### 📋 Datos de la Transacción\n\n| Campo | Detalle |\n|---|---|\n| 🆔 ID Transacción | `TX-0001000011` |\n| 👤 Cliente | Ana Torres |\n| 💳 Cuenta | ****1409 |\n| 💰 Monto | **$10,571.53 USD** |\n| 🌍 País | 🇧🇷 Brasil (BR) |\n| 🕐 Hora | **2:00 AM** |\n| 📅 Fecha | 02/06/2026 |\n| 🔄 Tipo | Retiro |\n| ⚠️ Estado | Suspicious |\n\n---\n\n### 🔍 Motivo del Caso\n\n**Monto inusual en horario de madrugada** — Retiro de **$10,571.53** realizado a las **2:00 AM** desde **Brasil**, país catalogado como de alto riesgo. La transacción fue marcada automáticamente como sospechosa por el sistema.\n\n---\n\n### 📌 Factores Agravantes (del historial)\n\n| # | Factor | Descripción |\n|---|--------|-------------|\n| 1 | 🌙 Horario inusual | Retiro a las 2:00 AM, fuera de horario bancario normal |\n| 2 | 💵 Monto elevado | $10,571.53 supera umbrales típicos de alerta |\n| 3 | 🌍 País de alto riesgo | Brasil (BR) está en lista de monitoreo |\n| 4 | 🔁 Patrón recurrente | Ana Torres realizó **3 transacciones sospechosas** en total: TX-0001000011, TX-0001000012 (Rusia, $12,831.21) y TX-0001000008 (Nigeria, $9,059.85 a las 3:00 AM) |\n| 5 | 🔗 Mismo día | TX-0001000011 y TX-0001000008 ocurrieron el **mismo día** en países distintos |\n\n---\n\n### 🎯 Nivel de Riesgo Propuesto\n\n> 🔴 **ALTO** — Por acumulación de factores: horario nocturno + monto elevado + país de riesgo + patrón de comportamiento repetitivo en múltiples países.\n\n---\n\n### ⚙️ Acción Recomendada\n\n- Bloquear preventivamente la cuenta ******1409** de Ana Torres\n- Investigar las transacciones relacionadas: `TX-0001000012` y `TX-0001000008`\n- Contactar al cliente para verificar la legitimidad de los movimientos\n\n---\n\n> ⚠️ **Nota técnica:** El servidor MCP no está disponible actualmente (`python mcp_server/server.py` debe estar en ejecución). Una vez restaurado, el caso puede registrarse formalmente en el sistema. ¿Deseas que lo reintente o continúes con otra acción?",
+    "tools_used": [
+      {
+        "tool": "mcp_query",
+        "input": {
+          "tool": "get_transaction_by_id",
+          "params": {
+            "transaction_id": "TX-0001000011"
+          },
+          "justification": "Necesito obtener los detalles de la transacción TX-0001000011 antes de crear el caso de fraude."
+        }
+      },
+      {
+        "tool": "search_history",
+        "input": {
+          "keyword": "TX-0001000011"
+        }
+      },
+      {
+        "tool": "mcp_query",
+        "input": {
+          "tool": "create_fraud_case",
+          "params": {
+            "transaction_id": "TX-0001000011",
+            "reason": "Retiro de monto inusual ($10,571.53) realizado en horario de madrugada (2:00 AM) desde Brasil (BR), país de alto riesgo. La transacción está marcada como sospechosa y corresponde al cliente Ana Torres (cuenta ****1409). El historial indica un patrón recurrente: la misma cliente tiene otra transacción sospechosa (TX-0001000012) por $12,831.21 en Rusia, y también realizó un retiro sospechoso (TX-0001000008) a las 3:00 AM en Nigeria el mismo día.",
+            "risk_level": "high"
+          },
+          "justification": "Se procede a crear el caso de fraude con todos los detalles obtenidos de la transacción y el contexto del historial previo que muestra un patrón de comportamiento sospechoso en la cliente Ana Torres."
+        }
+      }
+    ]
+  },
+  {
+    "id": "T05",
+    "category": "transactional",
+    "question": "¿Cuántas transacciones hay en estado flagged en los últimos 30 días desde Costa Rica?",
+    "answer": "Aquí tienes el resumen de los resultados obtenidos de la base de datos:\n\n---\n\n## 🚨 Transacciones en estado *Flagged* — Últimos 30 días\n\n> ⚠️ **Nota importante:** El sistema retornó **19 transacciones en estado sospechoso (*suspicious/flagged*)** en los últimos 30 días. Sin embargo, al revisar el detalle, **ninguna de ellas tiene como país de origen \"Costa Rica\" (CR)** — los países registrados en las transacciones son: RU, NG, BR, DE, ES, CO, CN.\n\n---\n\n### 📊 Resumen General\n\n| Campo | Valor |\n|---|---|\n| **Total de transacciones flagged (30 días)** | 19 |\n| **Transacciones originadas desde Costa Rica** | **0** |\n| **Países más frecuentes** | Nigeria (NG), Rusia (RU), Alemania (DE), Brasil (BR), Colombia (CO) |\n\n---\n\n### 🔍 Interpretación\n\nAunque se encontraron **19 transacciones marcadas como sospechosas** en el período solicitado, el campo `country` en los registros hace referencia al **país de destino o de la transacción**, y **ninguna corresponde a Costa Rica**. Esto puede deberse a que:\n\n1. **No hubo transacciones flagged originadas desde Costa Rica** en ese período.\n2. El campo `country` podría referirse al país del comercio o destino, no del cliente.\n\n---\n\n¿Te gustaría que profundice en alguno de estos registros, o que haga un análisis por cliente específico? 🔎",
+    "tools_used": [
+      {
+        "tool": "mcp_query",
+        "input": {
+          "tool": "get_recent_flagged_transactions",
+          "params": {
+            "days": 30,
+            "country": "Costa Rica"
+          },
+          "justification": "El usuario quiere saber cuántas transacciones están en estado 'flagged' en los últimos 30 días provenientes de Costa Rica."
+        }
+      }
+    ]
+  }
+]

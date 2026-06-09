@@ -1,0 +1,31 @@
+CAPTURAS DE PANTALLA NECESARIAS PARA EL INFORME
+================================================
+
+El informe tiene 3 figuras que requieren capturas manuales (fbox placeholders).
+Guardá cada imagen aquí con el nombre indicado.
+
+1. fig_langfuse_list.png
+   - Ir a https://us.cloud.langfuse.com
+   - Sección "Traces" → lista de trazas del proyecto
+   - Capturar mostrando varias trazas con nombres "assistant-question"
+   - Usada en: Figura 2 del informe (Vista general Langfuse)
+
+2. fig_langfuse_detail.png
+   - En Langfuse, hacer clic en cualquier traza "assistant-question"
+   - Expandir la jerarquía de spans completa
+   - Debe mostrar: orchestrator_llm → tool_rag_search → rag_retrieval → rag_generation
+   - Usada en: Figura 3 del informe (Detalle de traza anidada)
+
+3. fig_streamlit.png
+   - Ejecutar: streamlit run app/streamlit_app.py
+   - Ir a http://localhost:8501
+   - Hacer una pregunta sobre el curso (ej: "¿Qué es backpropagation?")
+   - Capturar mostrando: barra lateral (métricas ChromaDB), chat con respuesta, expander "Agentes utilizados"
+   - Usada en: Figura 4 del informe (Interfaz Streamlit)
+
+PASOS PARA INCLUIR EN EL INFORME:
+1. Tomar las capturas y guardarlas en esta carpeta
+2. En informe.tex, reemplazar cada \fbox{...} por:
+   \includegraphics[width=\columnwidth]{figures/fig_langfuse_list.png}
+   (etc. para cada figura)
+3. Compilar en Overleaf subiendo toda la carpeta informe/

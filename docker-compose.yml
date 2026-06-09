@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  mcp-server:
+    build:
+      context: .
+      dockerfile: mcp_server/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATABASE_PATH=/app/data/transactions.db
+    restart: unless-stopped
+
+  langfuse:
+    image: langfuse/langfuse:2
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://langfuse:langfuse@langfuse-db:5432/langfuse
+      - NEXTAUTH_SECRET=secret_change_me
+      - NEXTAUTH_URL=http://localhost:3000
+      - SALT=salt_change_me
+    depends_on:
+      - langfuse-db
+    profiles:
+      - local-langfuse
+
+  langfuse-db:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=langfuse
+      - POSTGRES_PASSWORD=langfuse
+      - POSTGRES_DB=langfuse
+    volumes:
+      - langfuse_postgres:/var/lib/postgresql/data
+    profiles:
+      - local-langfuse
+
+volumes:
+  langfuse_postgres:

@@ -1,0 +1,318 @@
+[
+  {
+    "question": "¿Qué es el descenso del gradiente?",
+    "config_A": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.554,
+      "avg_distance": 0.3964,
+      "min_distance": 0.3696,
+      "sources": [
+        "8_Semana_AI_20260414_1.pdf",
+        "8_SEMANA_AI_20260414_3.pdf",
+        "5_SEMANA_AI_20260317_2.pdf",
+        "4_SEMANA_AI_20260310_2.pdf",
+        "7_SEMANA_AI_20260407_1.pdf"
+      ],
+      "avg_chunk_len": 477,
+      "top_chunk_preview": "anterior.\nOptimizaci´on por Gradiente: Para que el modelo aprenda, todas las funciones deben ser diferenciables. Esto\npermite el uso del Descenso del "
+    },
+    "config_B": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.326,
+      "avg_distance": 0.422,
+      "min_distance": 0.3585,
+      "sources": [
+        "8_Semana_AI_20260414_1.pdf",
+        "8_SEMANA_AI_20260414_3.pdf",
+        "5_Semana_AI_20260319_2.pdf",
+        "4_SEMANA_AI_20260310_2.pdf",
+        "10_SEMANA_AI_2018191805_2.pdf"
+      ],
+      "avg_chunk_len": 709,
+      "top_chunk_preview": "permite el uso del Descenso del Gradiente para ajustar\nlos pesos y minimizar la funci´on de p´erdida.\nGracias al entrenamiento autom´atico mediante gr"
+    }
+  },
+  {
+    "question": "¿Cuál es la diferencia entre aprendizaje supervisado y no supervisado?",
+    "config_A": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.262,
+      "avg_distance": 0.2671,
+      "min_distance": 0.1233,
+      "sources": [
+        "1_SEMANA_AI_20260219_1.pdf",
+        "2_SEMANA_AI_20260224_2.pdf",
+        "1_SEMANA_AI_20260219_2.pdf"
+      ],
+      "avg_chunk_len": 402,
+      "top_chunk_preview": "supervisado o no supervisado.\nUso: basado en la funci´on, como aprendizaje supervisado\no no supervisado.\n• Refuerzo: este aprendizaje es un tipo de ap"
+    },
+    "config_B": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.234,
+      "avg_distance": 0.3112,
+      "min_distance": 0.1233,
+      "sources": [
+        "2_SEMANA_AI_20260224_1.pdf",
+        "2_SEMANA_AI_20260224_2.pdf",
+        "1_SEMANA_AI_20260219_2.pdf"
+      ],
+      "avg_chunk_len": 742,
+      "top_chunk_preview": "supervisado o no supervisado.\nUso: basado en la funci´on, como aprendizaje supervisado\no no supervisado.\n• Refuerzo: este aprendizaje es un tipo de ap"
+    }
+  },
+  {
+    "question": "¿Qué es una red neuronal convolucional?",
+    "config_A": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.268,
+      "avg_distance": 0.2874,
+      "min_distance": 0.27,
+      "sources": [
+        "9_SEMANA_AI_20260423_1.pdf",
+        "10_SEMANA_AI_20260428_1.pdf",
+        "9_SEMANA_AI_20260421_2.pdf",
+        "13_SEMANA_AI_20260521_3.pdf"
+      ],
+      "avg_chunk_len": 394,
+      "top_chunk_preview": "base de comportamientos mucho más ricos, como la redacción\nfluida, la resolución de problemas y la adaptación al estilo\ndel usuario, su potencia trae "
+    },
+    "config_B": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.336,
+      "avg_distance": 0.3986,
+      "min_distance": 0.3727,
+      "sources": [
+        "10_SEMANA_AI_20260428_3.pdf",
+        "14_SEMANA_AI_20260526_2.pdf",
+        "10_SEMANA_AI_2018191805_2.pdf",
+        "10_SEMANA_AI_20260428_1.pdf",
+        "13_SEMANA_AI_20260521_3.pdf"
+      ],
+      "avg_chunk_len": 816,
+      "top_chunk_preview": "La sesi´on inici´o con la realizaci´on del ´ultimo quiz del\nsemestre, el cual abord´o conceptos relacionados con redes\nneuronales convolucionales, arq"
+    }
+  },
+  {
+    "question": "¿Qué es el overfitting y cómo se previene?",
+    "config_A": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.294,
+      "avg_distance": 0.4046,
+      "min_distance": 0.3109,
+      "sources": [
+        "5_SEMANA_AI_20260317_1.pdf",
+        "5_SEMANA_AI_20260319_1.pdf",
+        "6_SEMANA_AI_20260324_1.pdf",
+        "5_Semana_AI_20260319_2.pdf",
+        "13_SEMANA_AI_20260519_1.pdf"
+      ],
+      "avg_chunk_len": 404,
+      "top_chunk_preview": "Overfitting. El modelo no generaliza; presenta alta varianza\nentre los resultados de training y validation."
+    },
+    "config_B": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.266,
+      "avg_distance": 0.4918,
+      "min_distance": 0.4631,
+      "sources": [
+        "1_SEMANA_AI_20260219_2.pdf",
+        "5_SEMANA_AI_20260319_1.pdf",
+        "5_SEMANA_AI_20260317_2.pdf",
+        "5_Semana_AI_20260319_2.pdf",
+        "13_SEMANA_AI_20260521_3.pdf"
+      ],
+      "avg_chunk_len": 903,
+      "top_chunk_preview": "El conjunto de datos se divide generalmente en dos partes:\ntraining y test. Usualmente, se emplea un 80% para entrenar\nel modelo y un 20% para evaluar"
+    }
+  },
+  {
+    "question": "¿Qué es la función de activación ReLU?",
+    "config_A": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.244,
+      "avg_distance": 0.441,
+      "min_distance": 0.4168,
+      "sources": [
+        "14_SEMANA_AI_20260528_1.pdf",
+        "7_SEMANA_AI_20260409_1.pdf",
+        "14_SEMANA_AI_20260528_2.pdf.pdf",
+        "13_SEMANA_AI_20260519_1.pdf",
+        "2_SEMANA_AI_20260224_2.pdf"
+      ],
+      "avg_chunk_len": 492,
+      "top_chunk_preview": "Figura 1. Ejemplo del patr´on ReAct intercalando Thought, Act y Obs.\nEl segundo patr´on, LOMAR, organiza el ciclo de vida del\nagente en cinco bloques "
+    },
+    "config_B": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.246,
+      "avg_distance": 0.4525,
+      "min_distance": 0.4395,
+      "sources": [
+        "8_Semana_AI_20260414_1.pdf",
+        "14_SEMANA_AI_20260528_2.pdf.pdf",
+        "5_Semana_AI_20260319_2.pdf",
+        "13_SEMANA_AI_20260519_1.pdf",
+        "11_SEMANA_AI_20260505_1.pdf"
+      ],
+      "avg_chunk_len": 790,
+      "top_chunk_preview": "Figura 1. Ejemplo del patr´on ReAct intercalando Thought, Act y Obs.\nEl segundo patr´on, LOMAR, organiza el ciclo de vida del\nagente en cinco bloques "
+    }
+  },
+  {
+    "question": "¿En qué consiste la retropropagación?",
+    "config_A": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.264,
+      "avg_distance": 0.4612,
+      "min_distance": 0.4448,
+      "sources": [
+        "2_SEMANA_AI_20260224_1.pdf",
+        "13_SEMANA_AI_20260521_1.pdf",
+        "13_SEMANA_AI_20260519_1.pdf",
+        "2_SEMANA_AI_20260224_2.pdf",
+        "11_SEMANA_AI_2016193340_2.pdf"
+      ],
+      "avg_chunk_len": 355,
+      "top_chunk_preview": "Separa los textos bas´andose solo en los espacios.\nEs la opci´on m´as r´apida para tareas b´asicas.\nque “perro” y “cachorro” est´an relacionados solo "
+    },
+    "config_B": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.241,
+      "avg_distance": 0.4737,
+      "min_distance": 0.4522,
+      "sources": [
+        "2_SEMANA_AI_20260224_1.pdf",
+        "13_SEMANA_AI_20260521_1.pdf",
+        "1_SEMANA_AI_20260219_2.pdf",
+        "13_SEMANA_AI_20260519_1.pdf"
+      ],
+      "avg_chunk_len": 732,
+      "top_chunk_preview": "aut´onomos y adaptativos. Esto implica que deben ser capaces\nde actuar sin intervenci´on externa y de saber como reaccionar\nante distintos est´ımulos,"
+    }
+  },
+  {
+    "question": "¿Qué es el aprendizaje por refuerzo?",
+    "config_A": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.255,
+      "avg_distance": 0.3949,
+      "min_distance": 0.3521,
+      "sources": [
+        "3_SEMANA_AI_20260303_2.pdf",
+        "2_SEMANA_AI_20260224_2.pdf",
+        "14_SEMANA_AI_20260528_1.pdf"
+      ],
+      "avg_chunk_len": 387,
+      "top_chunk_preview": "supervisado o no supervisado.\nUso: basado en la funci´on, como aprendizaje supervisado\no no supervisado.\n• Refuerzo: este aprendizaje es un tipo de ap"
+    },
+    "config_B": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.304,
+      "avg_distance": 0.4007,
+      "min_distance": 0.3409,
+      "sources": [
+        "2_SEMANA_AI_20260224_1.pdf",
+        "2_SEMANA_AI_20260224_2.pdf",
+        "13_SEMANA_AI_20260519_1.pdf",
+        "3_SEMANA_AI_20260303_1.pdf"
+      ],
+      "avg_chunk_len": 529,
+      "top_chunk_preview": "caracter´ısticas que agrupen, o permitan disminuir la dimensionalidad de los vectores.\nSemi-Supervisado: Utiliza tanto datos etiquetados como\nno etiqu"
+    }
+  },
+  {
+    "question": "¿Qué diferencia hay entre LSTM y RNN simple?",
+    "config_A": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.323,
+      "avg_distance": 0.5227,
+      "min_distance": 0.4274,
+      "sources": [
+        "5_SEMANA_AI_20260319_1.pdf",
+        "10_SEMANA_AI_20260428_2.pdf",
+        "13_SEMANA_AI_20260519_1.pdf"
+      ],
+      "avg_chunk_len": 417,
+      "top_chunk_preview": "VII.\n¿CU ´AL FUNCI ´ON DE ACTIVACI ´ON UTILIZAR?\nDepende del requerimiento del modelo. La recomendaci´on\ngeneral es empezar implementando ReLU . Si Re"
+    },
+    "config_B": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.256,
+      "avg_distance": 0.5763,
+      "min_distance": 0.5541,
+      "sources": [
+        "9_SEMANA_AI_20260423_1.pdf",
+        "10_SEMANA_AI_20260428_2.pdf",
+        "5_SEMANA_AI_20260319_1.pdf",
+        "13_SEMANA_AI_20260519_1.pdf"
+      ],
+      "avg_chunk_len": 580,
+      "top_chunk_preview": "• Pasa a menudo con datos con muchas dimensiones y\npocos ejemplos\n4) ¿Como evitarlo?:\n• Intentar con un modelo m´as simple\n• Reducir la dimensionalida"
+    }
+  },
+  {
+    "question": "¿Qué es K-Nearest Neighbors (KNN)?",
+    "config_A": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.313,
+      "avg_distance": 0.3689,
+      "min_distance": 0.2982,
+      "sources": [
+        "4_SEMANA_AI_20260310_1.pdf",
+        "4_SEMANA_AI_20260310_2.pdf",
+        "3_Semana_AI_20260305_2.pdf",
+        "4_SEMANA_AI_20260312_2.pdf"
+      ],
+      "avg_chunk_len": 490,
+      "top_chunk_preview": "entre s´ı.\nEl algoritmo K-Nearest Neighbors (KNN) utiliza este\nconcepto de proximidad para realizar predicciones.\nEl procedimiento general es:\n1. Se c"
+    },
+    "config_B": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.246,
+      "avg_distance": 0.4746,
+      "min_distance": 0.4003,
+      "sources": [
+        "4_SEMANA_AI_20260310_1.pdf",
+        "3_SEMANA_AI_20260305_1.pdf",
+        "4_SEMANA_AI_20260310_2.pdf",
+        "4_SEMANA_AI_20260312_2.pdf",
+        "3_Semana_AI_20260305_2.pdf"
+      ],
+      "avg_chunk_len": 1005,
+      "top_chunk_preview": "de herramientas como GitHub Copilot y modelos avanzados.\nPosteriormente, se realiz´o un repaso del algoritmo\nKNN y se introdujeron modelos estad´ıstic"
+    }
+  },
+  {
+    "question": "¿Qué es la regularización L1 y L2?",
+    "config_A": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.243,
+      "avg_distance": 0.5056,
+      "min_distance": 0.494,
+      "sources": [
+        "5_Semana_AI_20260319_2.pdf",
+        "4_SEMANA_AI_20260310_2.pdf",
+        "5_SEMANA_AI_20260319_1.pdf",
+        "7_SEMANA_AI_20260407_1.pdf"
+      ],
+      "avg_chunk_len": 376,
+      "top_chunk_preview": "• El resultado es no lineal.\n• Codominio [0, 1]\n• Relaci´on entre pesos y features se da por la regresi´on\nlineal.\n• Es una funci´on de activaci´on(fu"
+    },
+    "config_B": {
+      "chunks_retrieved": 5,
+      "latency_s": 0.245,
+      "avg_distance": 0.534,
+      "min_distance": 0.5257,
+      "sources": [
+        "3_SEMANA_AI_20260303_1.pdf",
+        "6_SEMANA_AI_20260326_1.pdf",
+        "4_SEMANA_AI_20260310_2.pdf",
+        "10_SEMANA_AI_2018191805_2.pdf",
+        "7_SEMANA_AI_20260407_1.pdf"
+      ],
+      "avg_chunk_len": 944,
+      "top_chunk_preview": "posteriormente es utilizado como entrada para un modelo de\naprendizaje automático.\nIV-E.\nSubcategorías del Aprendizaje Supervisado\nEl aprendizaje supe"
+    }
+  }
+]
