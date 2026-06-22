@@ -29,15 +29,19 @@ SUMMARIZER_MODEL = "claude-haiku-4-5-20251001"
 TRANSACTIONAL_MODEL = "claude-haiku-4-5-20251001"
 
 # RAG - Config A: chunks fijos
-RAG_CHUNK_SIZE_A = 512
-RAG_CHUNK_OVERLAP_A = 64
+RAG_CHUNK_SIZE_A = 50
+RAG_CHUNK_OVERLAP_A = 5
 
 # RAG - Config B: chunks semánticos
 RAG_CHUNK_SIZE_B = 1024
 RAG_CHUNK_OVERLAP_B = 128
 
 # Retrieval
-RAG_TOP_K = 5
+RAG_FETCH_K = 30   # chunks que se traen de ChromaDB
+RAG_TOP_K = 5      # chunks que llegan al LLM tras el rerank
+
+# Early stopping en reranking: si el mejor score supera este umbral se retorna antes
+RAG_EARLY_STOP_THRESHOLD = 0.85
 
 # Collections ChromaDB
 COLLECTION_A = "course_notes_a"

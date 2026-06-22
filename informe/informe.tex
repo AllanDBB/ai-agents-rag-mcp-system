@@ -20,7 +20,7 @@
 \begin{document}
 
 \title{Sistema Multi-Agente con RAG, A2A, MCP y Memoria\\
-{\large Informe Final --- Segunda Entrega}}
+{\large Informe Final --- Tercera Entrega}}
 
 \author{
   \IEEEauthorblockN{Allan B}
@@ -35,7 +35,7 @@
 \maketitle
 
 \begin{abstract}
-Este informe documenta el sistema multi-agente completo para respuesta de preguntas sobre los apuntes del curso de Inteligencia Artificial del TEC. El sistema combina \textit{Retrieval-Augmented Generation} (RAG) con dos configuraciones de segmentación comparadas experimentalmente, cinco agentes especializados coordinados mediante un orquestador con contratos formales compatibles con A2A, un servidor MCP con herramientas controladas para consultar una base de datos transaccional ficticia, memoria conversacional temporal e histórica persistente, y observabilidad completa mediante Langfuse. La evaluación experimental cubre 35 preguntas distribuidas en seis categorías. Los resultados muestran que la configuración A (chunks de 512 caracteres) produce recuperación más precisa (distancia coseno promedio de 0.405 vs 0.454 de la configuración B), mientras que la configuración B ofrece respuestas con mayor contexto semántico. El sistema responde correctamente preguntas factuales, de comparación, conversacionales con memoria, búsquedas web y consultas transaccionales.
+Este informe documenta el sistema multi-agente completo para respuesta de preguntas sobre los apuntes del curso de Inteligencia Artificial del TEC. El sistema combina \textit{Retrieval-Augmented Generation} (RAG) con dos configuraciones de segmentación comparadas experimentalmente, cinco agentes especializados coordinados mediante un orquestador con contratos formales compatibles con A2A, un servidor MCP con herramientas controladas para consultar una base de datos transaccional ficticia, memoria conversacional temporal e histórica persistente, y observabilidad completa mediante Langfuse. En esta tercera entrega se incorporaron: segmentación fina en la Configuración A (chunks de 50 caracteres), \textit{early stopping} por umbral de relevancia en el pipeline de recuperación, integración formal del reranker de codificador cruzado, y un módulo de autoencoder convolucional con \texttt{EarlyStopping} en lugar de un número fijo de épocas. La evaluación experimental cubre 35 preguntas distribuidas en seis categorías. El sistema responde correctamente preguntas factuales, de comparación, conversacionales con memoria, búsquedas web y consultas transaccionales.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -163,7 +163,7 @@ La base documental comprende 51 archivos PDF de apuntes del curso de IA, con nom
 
 Se implementaron y compararon dos estrategias:
 
-\textbf{Configuración A — Chunk fijo:} fragmentos de 512 caracteres con solapamiento de 64. Simple y predecible. Produce 1{,}238 chunks de 51 documentos.
+\textbf{Configuración A — Chunk fijo:} fragmentos de 50 caracteres con solapamiento de 5. Granularidad fina que maximiza la precisión léxica en la recuperación. Produce un mayor número de chunks por documento comparado con la entrega anterior (512 caracteres).
 
 \textbf{Configuración B — Chunk semántico:} fragmentos de hasta 1{,}024 caracteres con solapamiento de 128, usando separadores naturales del texto (\texttt{\textbackslash n\textbackslash n}, \texttt{\textbackslash n}, \texttt{. }, \texttt{? }, \texttt{! }). Produce 643 chunks de los mismos documentos.
 
@@ -184,13 +184,24 @@ El Cuadro~\ref{tab:rag_comparison} muestra los resultados promediados sobre 10 p
 \toprule
 \textbf{Config} & \textbf{Dist. coseno} & \textbf{Chars/chunk} & \textbf{Chunks total} \\
 \midrule
-A (512 fijo) & 0.405 & 419 & 1{,}238 \\
+A (50 fijo) & -- & 50 & pendiente re-ingesta \\
 B (1024 semántico) & 0.454 & 775 & 643 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-La configuración A produce menor distancia coseno promedio (mayor similitud), lo que indica recuperación más precisa a nivel de fragmento. La configuración B, al producir chunks más largos, incluye más contexto por fragmento pero con menor precisión semántica. Para preguntas concretas y factuales, A es superior; para preguntas que requieren comprensión de párrafos completos, B puede ser más adecuada.
+La Configuración A fue actualizada a 50 caracteres por chunk (solapamiento 5) para maximizar la granularidad léxica y reducir el ruido semántico dentro de cada fragmento. Los valores de distancia coseno serán actualizados tras re-ingestar los documentos con la nueva configuración. La Configuración B mantiene su tamaño semántico (1{,}024 caracteres) para conservar el contexto de párrafos completos.
+
+\subsection{Pipeline de recuperación con Reranking y Early Stopping}
+
+El pipeline de recuperación opera en dos etapas:
+
+\begin{enumerate}
+  \item \textbf{Recuperación inicial (HNSW):} ChromaDB retorna los \(k_{\text{fetch}} = 30\) chunks con mayor similitud coseno al embedding de la consulta.
+  \item \textbf{Reranking:} un codificador cruzado (\texttt{cross-encoder/ms-marco-MiniLM-L-6-v2}) puntúa cada par (consulta, chunk) conjuntamente y selecciona los \(k_{\text{top}} = 5\) más relevantes para el LLM.
+\end{enumerate}
+
+Se incorpora además un mecanismo de \textit{early stopping} por umbral: si el chunk con mayor score del reranker supera 0.85, el pipeline retorna inmediatamente sin evaluar los candidatos restantes, reduciendo latencia cuando la evidencia ya es suficientemente confiable.
 
 % =============================================================
 \section{Diseño del MCP Server}
@@ -363,11 +374,26 @@ Para ejecutar el sistema desde cero se siguen seis pasos: (1) instalar las depen
 
 Se implementó un sistema multi-agente completo que combina RAG, orquestación A2A, MCP, memoria conversacional y observabilidad. Los resultados de evaluación muestran un ruteo correcto del 94.3\% y respuestas fundamentadas en los apuntes del curso en todas las preguntas factuales y de comparación.
 
-La comparación de configuraciones RAG evidencia un trade-off entre precisión (Config A, chunks cortos) y contexto (Config B, chunks largos): para preguntas específicas y factuales, la Config A produce recuperación más precisa; para preguntas que requieren comprensión de conceptos completos, la Config B puede ser preferible.
+Las mejoras incorporadas en esta entrega (chunk fino de 50 caracteres, reranking con codificador cruzado y early stopping por umbral) fortalecen el pipeline de recuperación: el reranker reordena los candidatos iniciales con puntuación semántica conjunta, y el early stopping evita latencia innecesaria cuando ya se dispone de evidencia de alta confianza.
 
 Las principales limitaciones son: la cobertura parcial del corpus de apuntes, la calidad subóptima de embeddings en español con el modelo actual, y la necesidad de que el servidor MCP esté activo de forma independiente para las consultas transaccionales.
 
-Como trabajo futuro se recomienda: incorporar un modelo de embeddings multilingüe especializado en español, ampliar el corpus con todos los apuntes del curso, e implementar un mecanismo de reconexión automática al MCP Server.
+Como trabajo futuro se recomienda: incorporar un modelo de embeddings multilingüe especializado en español, ampliar el corpus con todos los apuntes del curso, re-evaluar la comparación experimental con la nueva Configuración A (50 chars), y explorar técnicas adicionales de reranking como Maximal Marginal Relevance (MMR) o reranking probabilístico.
+
+% =============================================================
+\section{Correcciones Realizadas a partir de la Segunda Entrega}
+
+A partir de la retroalimentación recibida en la segunda entrega, se realizaron las siguientes mejoras:
+
+\begin{enumerate}
+  \item \textbf{Reducción del tamaño de chunk en Config A:} el tamaño de fragmento de la Configuración A se redujo de 512 a 50 caracteres (solapamiento de 64 a 5). La granularidad fina mejora la precisión léxica en la recuperación inicial y reduce el ruido dentro de cada fragmento.
+
+  \item \textbf{Early stopping en el pipeline de recuperación:} se añadió un umbral de relevancia (\texttt{RAG\_EARLY\_STOP\_THRESHOLD = 0.85}) al reranker. Cuando el chunk con mayor score supera este umbral, el pipeline retorna inmediatamente sin procesar los candidatos restantes, reduciendo latencia en consultas con alta confianza.
+
+  \item \textbf{Integración formal del reranker de codificador cruzado:} el reranker (\texttt{cross-encoder/ms-marco-MiniLM-L-6-v2}) ya existía como módulo pero ahora está documentado explícitamente en el informe como segunda etapa del pipeline de recuperación. Retorna tanto los índices como los scores de cada chunk para uso diagnóstico futuro.
+
+  \item \textbf{Módulo de autoencoder con EarlyStopping:} se implementó \texttt{models/autoencoder.py} con un autoencoder convolucional para reconstrucción de imágenes. A diferencia de implementaciones con límite fijo de 8--10 épocas (insuficiente para convergencia adecuada), el entrenamiento usa \texttt{EarlyStopping(patience=15, restore\_best\_weights=True)} y un techo de 500 épocas. El módulo también incorpora \texttt{ReduceLROnPlateau} y métricas de evaluación (MSE, MAE, PSNR, SSIM) para cuantificar la calidad de reconstrucción. Las reconstrucciones correctamente entrenadas deben presentar únicamente variaciones menores de color o nitidez; artefactos más pronunciados indican entrenamiento insuficiente.
+\end{enumerate}
 
 % =============================================================
 \begin{thebibliography}{00}

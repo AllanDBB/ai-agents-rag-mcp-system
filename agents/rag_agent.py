@@ -1,6 +1,7 @@
 import anthropic
 import config
 from rag.vector_store import search as vector_search
+from rag.reranker import rerank
 from observability.langfuse_client import get_langfuse
 
 CONTRACT = {
@@ -34,13 +35,25 @@ class RAGAgent:
         self.client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
         self.model = config.RAG_MODEL
 
+    def _fetch_and_rerank(self, query: str, collection: str) -> tuple[list[str], list[dict]]:
+        results = vector_search(query, collection_name=collection, n_results=config.RAG_FETCH_K)
+        docs  = results.get("documents", [[]])[0]
+        metas = results.get("metadatas",  [[]])[0]
+        if not docs:
+            return [], []
+        top_indices, _ = rerank(
+            query,
+            docs,
+            top_k=config.RAG_TOP_K,
+            early_stop_threshold=config.RAG_EARLY_STOP_THRESHOLD,
+        )
+        return [docs[i] for i in top_indices], [metas[i] for i in top_indices]
+
     def search(self, query: str, collection: str = config.COLLECTION_A) -> dict:
         lf = get_langfuse()
 
         def _do_search():
-            results = vector_search(query, collection_name=collection)
-            docs  = results.get("documents", [[]])[0]
-            metas = results.get("metadatas",  [[]])[0]
+            docs, metas = self._fetch_and_rerank(query, collection)
 
             if not docs:
                 return {
@@ -73,11 +86,9 @@ class RAGAgent:
         with lf.start_as_current_observation(
             name="rag_retrieval",
             as_type="retriever",
-            input={"query": query, "collection": collection},
+            input={"query": query, "collection": collection, "fetch_k": config.RAG_FETCH_K},
         ):
-            results = vector_search(query, collection_name=collection)
-            docs  = results.get("documents", [[]])[0]
-            metas = results.get("metadatas",  [[]])[0]
+            docs, metas = self._fetch_and_rerank(query, collection)
 
             if not docs:
                 result = {
