@@ -23,12 +23,19 @@
 {\large Informe Final --- Tercera Entrega}}
 
 \author{
-  \IEEEauthorblockN{Allan B}
+  \IEEEauthorblockN{Allan Bolaños Barrientos}
   \IEEEauthorblockA{
-    \textit{Escuela de Ingeniería en Computación}\\
-    \textit{Instituto Tecnológico de Costa Rica}\\
-    Curso de Inteligencia Artificial\\
-    adbyb.es@gmail.com
+    \textit{Escuela de Ingeniería en Computación} \\
+    \textit{Instituto Tecnológico de Costa Rica} \\
+    Cartago, Costa Rica \\
+    a.bolanos.2@estudiantec.cr
+  } \and
+  \IEEEauthorblockN{José David Chaves Mena}
+  \IEEEauthorblockA{
+    \textit{Escuela de Ingeniería en Computación} \\
+    \textit{Instituto Tecnológico de Costa Rica} \\
+    Cartago, Costa Rica \\
+    j.chaves.3@estudiantec.cr
   }
 }
 
@@ -109,17 +116,18 @@ El stack tecnológico se resume en el Cuadro~\ref{tab:stack}.
 \textbf{Componente} & \textbf{Tecnología} & \textbf{Justificación} \\
 \midrule
 LLM orquestador & claude-sonnet-4-6 & Mayor capacidad de razonamiento y tool use \\
-LLM agentes & claude-haiku-4-5 & Bajo costo para agentes especializados \\
+LLM agentes & claude-haiku-4-5 & Bajo costo para agentes especializados \cite{anthropic2024claude}\\
 Embeddings & all-MiniLM-L6-v2 (ONNX) & Local, sin costo, multilingüe, 384 dims \\
-Vector DB & ChromaDB & Persistente local, sin infraestructura \\
+Vector DB & ChromaDB & Persistente local, sin infraestructura \cite{chroma2023} \\
 BD transaccional & SQLite + Docker & Reproducible, sin dependencias externas \\
 MCP SDK & Python mcp & SDK oficial de Anthropic \\
 Observabilidad & Langfuse Cloud & Trazas detalladas, gratuito \\
-Web Search & Tavily API & Plan gratuito disponible \\
+Web Search & Tavily API & Plan gratuito disponible \cite{tavily2024} \\
 Frontend & Streamlit & Prototipado rápido \\
 \bottomrule
 \end{tabular}
 \end{table}
+
 
 % =============================================================
 \section{Diseño de Agentes y Responsabilidades}
