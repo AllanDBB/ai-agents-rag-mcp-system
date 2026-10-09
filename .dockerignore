@@ -1,0 +1,14 @@
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.git
+Apuntes
+data/chroma_db
+data/memory.db
+data/documents
+informe
+eval
+*.pdf
+*.png
